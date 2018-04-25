@@ -10778,6 +10778,10 @@ body {
   width: 100%;
   margin: 0; }
 
+h1 {
+  font-size: .8rem;
+  text-align: center; }
+
 #top-container {
   min-height: 100%;
   padding-bottom: 144px; }
@@ -10799,7 +10803,42 @@ body {
 #legal-line {
   text-align: center;
   background-color: #4EAB36;
-  color: #241F21; }
+  color: #241F21;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+#home-page {
+  background-color: #000; }
+  #home-page .jumbotron {
+    padding: 0;
+    margin: 0;
+    width: 100%; }
+    #home-page .jumbotron img {
+      width: 100%; }
+
+#client-spotlight h1 {
+  padding-top: 1%;
+  color: #5CB545; }
+
+#client-logo-img {
+  max-width: 80%;
+  margin: 1% auto; }
+
+#logo-ea {
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1); }
+
+#nature-exp {
+  color: #5CB545;
+  padding-top: 4%;
+  padding-bottom: 4%; }
+  #nature-exp ul {
+    text-align: center;
+    list-style-type: none;
+    padding-left: 0px; }
+  #nature-exp .exp-txt {
+    max-width: 80%;
+    margin: 0 auto; }
 
 #about-page {
   /*
@@ -10827,7 +10866,6 @@ body {
 
 .about_header {
   margin-top: 20%;
-  font-size: .75rem;
   text-align: center;
   text-transform: uppercase; }
 

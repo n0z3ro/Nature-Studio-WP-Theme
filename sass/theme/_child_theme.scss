@@ -4,6 +4,10 @@ body{
 	width:100%;
 	margin:0;
 }
+h1{
+	font-size:.8rem;
+	text-align:center;
+}
 #top-container{
 	min-height:100%;
 	padding-bottom:$footer_height;
@@ -25,9 +29,48 @@ body{
 #legal-line{
 	text-align:center;
 	background-color:$primary;
-	color:$dark_text;
+	color:$dark_txt;
+	padding-top:10px;
+	padding-bottom:10px;
 }
-
+#home-page{
+	background-color:$dark_bg;
+	.jumbotron{
+		padding:0;
+		margin:0;
+		width:100%;
+		img{
+			width:100%;
+		}
+	}
+}
+#client-spotlight{
+	h1{
+		padding-top:1%;
+		color:$green_txt;
+	}
+}
+#client-logo-img{
+	max-width:80%;
+	margin:1% auto;
+}
+#logo-ea{
+	filter:brightness(0) invert(1);
+}
+#nature-exp{
+	color:$green_txt;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	ul{
+		text-align: center;
+		list-style-type: none;
+		padding-left: 0px;
+	}
+	.exp-txt{
+		max-width:80%;
+		margin:0 auto;
+	}
+}
 #about-page{
 	/*
 	::-webkit-scrollbar{ 
@@ -37,12 +80,12 @@ body{
 	.content{
 		.scrollTo{
 			background:$green_bg;
-			color:$dark_text;
+			color:$dark_txt;
 			height:100vh;
 		}
 		.scrollTo:nth-child(odd) {
 			background:$dark_bg;
-			color:$green_bg;
+			color:$green_txt;
 		}
 		.nopadding{
 			height:auto;
@@ -63,7 +106,6 @@ body{
 }
 .about_header{
 	margin-top:20%;
-	font-size:.75rem;
 	text-align:center;
 	text-transform:uppercase;
 }

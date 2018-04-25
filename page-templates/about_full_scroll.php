@@ -9,76 +9,33 @@
 
 get_header();
 ?>
-<!--
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script>
-var scrolling = false;
-var currentPos = 0;
 
-    function scrollUp(){
-        if(!scrolling && currentPos > 0 ){
-            scrolling=true;
-            currentPos --;
-            var scrollToElement = $('.scrollTo')[currentPos];
-
-            $('html, body').animate({
-                scrollTop: $(scrollToElement).offset().top
-            }, 500, function(){
-                scrolling = false;
-            });      
-        }
-    }   
-
-    function scrollDown(){   
-        if(!scrolling && currentPos < $('.scrollTo').length-1  ){
-            scrolling=true;
-            currentPos ++;
-            var scrollToElement = $('.scrollTo')[currentPos];
-
-            $('html, body').animate({
-                scrollTop: $(scrollToElement).offset().top
-            }, 500,function(){
-                scrolling = false;
-            }); 
-        }
-    }    
-
-    $(document).ready(function() {
-
-        // Get the current position on load
-
-        for( var i = 0; i < $('.scrollTo').length; i++){
-            var elm = $('.scrollTo')[i];
-
-            if( $(document).scrollTop() >= $(elm).offset().top ){
-                currentPos = i;
+<div id="about-page" class="container-fluid">
+    <div class="content row">
+        <div class="container-fluid">
+    <?php
+        $the_query = new WP_Query( array( 'category_name' => 'about-content' ) );
+            if ( $the_query->have_posts() ) {
+                while ( $the_query->have_posts() ) {
+                    $the_query->the_post();
+                    $about_text = get_the_content(); 
+                    echo '<div class="scrollTo row"><div class="col-12">';
+                    echo '<h1 class="about_header">'. get_the_title() . '</h1>';
+                    echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
+                    echo '</div></div>';
+                }
+                wp_reset_postdata();
+            } else {
+                echo 'no content matches about-content category';
             }
-        }
-
-        $(document).bind('DOMMouseScroll', function(e){
-            if(e.originalEvent.detail > 0) {
-                scrollDown();
-            }else {
-                scrollUp();   
-            }
-            return false;
-        });
-
-        $(document).bind('mousewheel', function(e){
-            if(e.originalEvent.wheelDelta < 0) {
-                scrollDown();
-            }else {
-                scrollUp();     
-            }
-            return false;
-        });
-    });
-    </script>
--->
-<?php while ( have_posts() ) : the_post(); ?>
-
-	<?php get_template_part( 'loop-templates/content', 'blank' ); ?>
-
-<?php endwhile; // end of the loop. ?>
-
+    ?>
+    <div class="scrollTo row nopadding">
+        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" /></div>
+        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" /></div>
+        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" /></div>
+        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" /></div>
+    </div>
+</div>
+</div>
+</div>
 <?php get_footer(); ?>

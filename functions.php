@@ -22,4 +22,7 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    if ( is_page_template('page-templates/about_full_scroll.php') ) {
+       wp_enqueue_script( 'full-scroll-script', get_stylesheet_directory_uri() . '/js/full_scroll.js', array(), false); 
+    }
 }

@@ -1,0 +1,25 @@
+html,
+body{
+	height:100%;
+	width:100%;
+	margin:0;
+}
+#top-container{
+	height:100%;
+	padding-bottom:$footer_height;
+}
+#top-row{
+	height:100%;
+}
+#nature-foot-wrap{
+	height:$footer_height;
+	margin-top: -$footer_height;
+}
+#nature-foot{
+	background-color:$dark_bg;
+}
+#legal-line{
+	text-align:center;
+	background-color:$primary;
+	color:$dark_text;
+}

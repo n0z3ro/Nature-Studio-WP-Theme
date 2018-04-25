@@ -10771,3 +10771,28 @@ a.skip-link {
 
 .gallery-caption {
   display: block; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+#top-container {
+  height: 100%;
+  padding-bottom: 144px; }
+
+#top-row {
+  height: 100%; }
+
+#nature-foot-wrap {
+  height: 144px;
+  margin-top: -144px; }
+
+#nature-foot {
+  background-color: #000; }
+
+#legal-line {
+  text-align: center;
+  background-color: #4EAB36;
+  color: #241F21; }

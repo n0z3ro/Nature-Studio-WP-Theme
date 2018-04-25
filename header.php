@@ -24,3 +24,5 @@
 	<?php wp_head(); ?>
 </head>
 <body>
+	<div id="top-container" class="container-fluid">
+		<div id="top-row" class="row">

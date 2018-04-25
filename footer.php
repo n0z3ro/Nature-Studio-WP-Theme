@@ -8,9 +8,10 @@
 //$the_theme = wp_get_theme();
 //$container = get_theme_mod( 'understrap_container_type' );
 ?>
-
-<div class="container-fluid" id="nature-foot">
-<div class="row">
+</div><!-- #top-row .row -->
+</div><!-- #top-container .container-fluid -->
+<footer id="nature-foot-wrap" class="container-fluid">
+<div id="nature-foot" class="row">
   <div class="col-md-3">green logo</div>
   <div class="col-md-3">
     <div class="container-fluid">
@@ -23,7 +24,13 @@
   </div>
   <div class="col-md-3 offset-md-3"><p>Nature Studio</p><p>1060 Hancock St. #17</p><p>Brooklyn, NY 11221</p></div>
 </div>
+<div id="legal-line" class="row">
+<div class="col-md-12">
+  ©2018 NATURE STUDIO LLC — ALL RIGHTS RESERVED.
 </div>
+</div>
+</footer>
+
 <?php wp_footer(); ?>
 </body>
 </html>

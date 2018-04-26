@@ -25,6 +25,29 @@ h1{
 }
 #nature-foot{
 	background-color:$dark_bg;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-size:.75rem;
+	img{
+		margin: 0 auto;
+		display: block;
+	}
+	#foot-menu{
+		position:relative;
+		.container-fluid{
+			max-width:240px;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+	}
+	#foot-addy{
+		color:$green_txt;
+		p{
+			margin-bottom:0;
+		}
+	}
 }
 #legal-line{
 	text-align:center;
@@ -117,4 +140,19 @@ h1{
 	max-width:85%;
 	margin-left:auto;
 	margin-right:auto;
+}
+
+@include media-breakpoint-down(md) {
+	#nature-foot{
+		#foot-menu{
+			.container-fluid{
+				max-width:100%;
+				position: relative;
+				top:0;
+				left:0;
+				transform: none;
+				text-align:center;
+			}
+		}
+	}
 }

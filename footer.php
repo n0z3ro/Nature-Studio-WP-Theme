@@ -12,17 +12,17 @@
 </div><!-- #top-container .container-fluid -->
 <footer id="nature-foot-wrap" class="container-fluid">
 <div id="nature-foot" class="row">
-  <div class="col-md-3">green logo</div>
-  <div class="col-md-3">
+  <div id="foot-logo" class="col-md-3"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" /></div>
+  <div id="foot-menu" class="col-md-3">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4"><a href="#">Work</a></div>
-        <div class="col-md-4"><a href="#">About</a></div>
-        <div class="col-md-4"><a href="#">Contact</a></div>
+        <div class="col-md-4 align-middle"><a href="#">Work</a></div>
+        <div class="col-md-4 align-middle"><a href="#">About</a></div>
+        <div class="col-md-4 align-middle"><a href="#">Contact</a></div>
       </div>
     </div>
   </div>
-  <div class="col-md-3 offset-md-3"><p>Nature Studio</p><p>1060 Hancock St. #17</p><p>Brooklyn, NY 11221</p></div>
+  <div id="foot-addy" class="col-md-3 offset-md-3"><p>Nature Studio</p><p>1060 Hancock St. #17</p><p>Brooklyn, NY 11221</p></div>
 </div>
 <div id="legal-line" class="row">
 <div class="col-md-12">

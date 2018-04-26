@@ -11,20 +11,21 @@ h1{
 #top-container{
 	min-height:100%;
 	padding-bottom:$footer_height;
+	background-color:$dark_bg;
 }
 #top-row{
 	min-height:100%;
 }
 .nopadding > div[class^="col"] {
-    padding-right:0;
-    padding-left:0;
+	padding-right:0;
+	padding-left:0;
 }
 #nature-foot-wrap{
 	height:$footer_height;
 	margin-top:-$footer_height;
 }
 #nature-foot{
-	background-color:$dark_bg;
+
 	padding-top: 2%;
 	padding-bottom: 2%;
 	font-size:.75rem;
@@ -57,7 +58,7 @@ h1{
 	padding-bottom:10px;
 }
 #home-page{
-	background-color:$dark_bg;
+
 	.jumbotron{
 		padding:0;
 		margin:0;
@@ -66,19 +67,34 @@ h1{
 			width:100%;
 		}
 	}
-}
-#client-spotlight{
-	h1{
-		padding-top:1%;
-		color:$green_txt;
+	#splash-img{
+		padding-top: 730px/1366px * 100%; /* fixed aspect ratio for image*/
+		display:table;/*FF fix*/
+		height: 0;
+		width: 100%;
+		background-position: center bottom;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	#client-logo-img{
+		max-width:80%;
+		margin:1% auto;
+	}
+	#client-spotlight{
+		h1{
+			padding-top:1%;
+			color:$green_txt;
+		}
 	}
 }
 #client-logo-img{
-	max-width:80%;
-	margin:1% auto;
-}
-#logo-ea{
-	filter:brightness(0) invert(1);
+	img{
+		margin:0 auto;
+		display:block;
+	}
+	:hover{
+		filter:brightness(0) invert(1);
+	}
 }
 #nature-exp{
 	color:$green_txt;
@@ -92,12 +108,13 @@ h1{
 	.exp-txt{
 		max-width:80%;
 		margin:0 auto;
+		text-align:center;
 	}
 }
 #about-page{
 	/*
 	::-webkit-scrollbar{ 
-    	display:none;
+		display:none;
 	}
 	*/
 	.content{
@@ -120,15 +137,13 @@ h1{
 	h2{
 		text-align:center;
 	}
-	img.alignnone{
-		margin-left:2%;
-		margin-right:2%;
-		float:right!important;
+	#client-logo-img{
+		max-width:100%;
+		margin:5% auto;
 	}
-
 }
 .about_header{
-	margin-top:20%;
+	margin-top:10%;
 	text-align:center;
 	text-transform:uppercase;
 }
@@ -152,6 +167,53 @@ h1{
 				left:0;
 				transform: none;
 				text-align:center;
+			}
+		}
+		#foot-addy{
+			text-align:right;
+		}
+	}
+	#nature-exp h1{
+		padding-top:5%;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	#home-page #nature-exp h1{
+		padding-top:8%;
+	}
+	#about-page{
+		#client-logo-img{
+			margin:0 auto;
+			img{
+				max-height:55px;
+				margin:0 auto;
+			}
+		}
+		h2{
+			font-size:1.75rem;
+		}
+		.about_text{
+			font-size:0.9rem;
+		}
+	}
+}
+@include media-breakpoint-down(xs) {
+	#about-page{
+		.about_header{
+			margin-top:2%;
+		}
+		.about_text{
+			font-size:0.8rem;
+		}
+	}
+}
+@media (max-width:600px) and (min-height:480px){
+	.about_text{
+		#client-logo-img{
+			.col-4{
+				max-width:50%;
+				flex: 0 0 50%;
 			}
 		}
 	}

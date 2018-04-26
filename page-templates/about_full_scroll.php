@@ -11,30 +11,86 @@ get_header();
 ?>
 
 <div id="about-page" class="container-fluid">
-    <div class="content row">
-        <div class="container-fluid">
-    <?php
-        $the_query = new WP_Query( array( 'category_name' => 'about-content' ) );
-            if ( $the_query->have_posts() ) {
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
-                    $about_text = get_the_content(); 
-                    echo '<div class="scrollTo row"><div class="col-12">';
-                    echo '<h1 class="about_header">'. get_the_title() . '</h1>';
-                    echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
-                    echo '</div></div>';
-                }
-                wp_reset_postdata();
-            } else {
-                echo 'no content matches about-content category';
-            }
-    ?>
-    <div class="scrollTo row nopadding">
-        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" /></div>
-        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" /></div>
-        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" /></div>
-        <div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" /></div>
-    </div>
+	<div class="content row">
+		<div class="container-fluid">
+			<div class="scrollTo row">
+				<div class="col-12">
+					<h1 class="about_header">clients</h1>
+					<div class="about_text">
+						<div class="container-fluid">
+							<div id="client-logo-img" class="row">
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-spike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Spike.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-bounce" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Bounce.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-goods" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Goods.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-frank" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Frank.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-pioneer" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pioneer.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-shure" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Shure.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-stanton" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Stanton.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2 offset-md-6">
+									<img id="logo-zo" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_ZenithOptimedia.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-tablist" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Tablist.png' ?>" />
+								</div>
+								<div class="col-4 col-sm-4 col-md-2">
+									<img id="logo-nyparks" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NYParksRec.png' ?>" />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	<?php
+		$the_query = new WP_Query( array( 'category_name' => 'about-content' ) );
+			if ( $the_query->have_posts() ) {
+				while ( $the_query->have_posts() ) {
+					$the_query->the_post();
+					$about_text = get_the_content(); 
+					echo '<div class="scrollTo row"><div class="col-12">';
+					echo '<h1 class="about_header">'. get_the_title() . '</h1>';
+					echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
+					echo '</div></div>';
+				}
+				wp_reset_postdata();
+			} else {
+				echo 'no content matches about-content category';
+			}
+	?>
+	<div class="scrollTo row nopadding">
+		<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" /></div>
+		<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" /></div>
+		<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" /></div>
+		<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" /></div>
+	</div>
 </div>
 </div>
 </div>

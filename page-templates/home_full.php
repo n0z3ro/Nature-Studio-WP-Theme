@@ -14,7 +14,9 @@ get_header();
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container-fluid">
 				<div class="row">
-					<img src="<?php echo get_stylesheet_directory_uri() . '/img/NatureStudio-EA_Splash.jpg' ?>" />
+					<div id="splash-img" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/NatureStudio-EA_Splash.jpg' ?>')">
+						<!--<img src="<?php echo get_stylesheet_directory_uri() . '/img/NatureStudio-EA_Splash.jpg' ?>" /> -->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -29,22 +31,22 @@ get_header();
 						</div>
 					</div>
 					<div id="client-logo-img" class="row">
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" />
 						</div>
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-spike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Spike.png' ?>" />
 						</div>
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" />
 						</div>
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" />
 						</div>
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" />
 						</div>
-						<div class="col">
+						<div class="col-6 col-sm-6 col-md-2">
 							<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" />
 						</div>
 					</div>

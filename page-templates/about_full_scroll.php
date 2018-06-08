@@ -15,24 +15,24 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 	<div class="content row">
 		<section class="slide-wrapper">
 			<div class="container-fluid">
-				<div id="myCarousel" class="carousel vert slide" data-ride="carousel" data-interval="false" data-wrap="false">
+				<div id="vertCarousel" class="carousel vert slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
 						<?php $slide_number = 0; //set initial slide number for client images ?>
-						<li data-target="#myCarousel" data-slide-to="<?php echo $slide_number ?>" class="active"></li>
+						<li data-target="#vertCarousel" data-slide-to="<?php echo $slide_number ?>" class="active"></li>
 						<?php
 							//increment slide number for each content slide
 							if ( $about_content->have_posts() ) {
 								while ( $about_content->have_posts() ) {
 									$about_content->the_post();
 									$slide_number++;
-									echo '<li data-target="#myCarousel" data-slide-to="'.$slide_number.'"></li>';
+									echo '<li data-target="#vertCarousel" data-slide-to="'.$slide_number.'"></li>';
 								}
 								//wp_reset_postdata();
 							}
 						?>
 						<?php $slide_number++; //last slide number for team images/footer ?>
-						<li data-target="#myCarousel" data-slide-to="<?php echo $slide_number ?>"></li>
+						<li data-target="#vertCarousel" data-slide-to="<?php echo $slide_number ?>"></li>
 					</ol>
 
 					<!-- Wrapper for slides -->

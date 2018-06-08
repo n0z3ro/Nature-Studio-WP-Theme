@@ -245,7 +245,8 @@ margin:0 auto;
 		width:100%!important;
 	}
 }
-// about_full_scroll styling
+
+/*Fullpage Scroll (Vertical Carousel) */
 body.page-template-about_full_scroll{
 	overflow:hidden;
 	#nature-foot-wrap{
@@ -255,7 +256,6 @@ body.page-template-about_full_scroll{
 		bottom: 0;
 	}
 }
-/*New vertical carousel*/
 .vert .carousel-item-next.carousel-item-left,
 .vert .carousel-item-prev.carousel-item-right{
 	-webkit-transform: translate3d(0, 0, 0);
@@ -288,32 +288,31 @@ body.page-template-about_full_scroll{
 .carousel,
 .carousel-item,
 .fill {
-    height:100%;
-    width:100%;
-    background-position:center center;
-    background-size:cover;
+	height:100%;
+	width:100%;
+	background-position:center center;
+	background-size:cover;
 }
 .carousel-indicators{
-	position: absolute;
-	top: 9%;
-	bottom: 0;
-	margin: 0;
-	height: 10%;
-	right: -4%;
-	left: auto;
-	width: 20%;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    transform: rotate(90deg);
+	position:absolute;
+	top:0;
+	bottom:0;
+	margin:auto;
+	height:20px;
+	right:-90px;
+	left:auto;
+	width:auto;
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 .carousel-indicators li{
-    display:block;
-    margin-bottom:5px;
-    border:1px solid #00a199;
+	display:block;
+	margin-bottom:5px;
+	border:1px solid #00a199;
 }
 .carousel-indicators li.active{
-    margin-bottom:5px; background:#00a199;
-    
+	margin-bottom:5px; background:#00a199;
 }

@@ -10978,6 +10978,7 @@ section.kc-elm .kc-col-container {
   .kc_column_inner {
     width: 100% !important; } }
 
+/*Fullpage Scroll (Vertical Carousel) */
 body.page-template-about_full_scroll {
   overflow: hidden; }
   body.page-template-about_full_scroll #nature-foot-wrap {
@@ -10986,7 +10987,6 @@ body.page-template-about_full_scroll {
     position: absolute;
     bottom: 0; }
 
-/*New vertical carousel*/
 .vert .carousel-item-next.carousel-item-left,
 .vert .carousel-item-prev.carousel-item-right {
   -webkit-transform: translate3d(0, 0, 0);
@@ -11021,13 +11021,13 @@ body.page-template-about_full_scroll {
 
 .carousel-indicators {
   position: absolute;
-  top: 9%;
+  top: 0;
   bottom: 0;
-  margin: 0;
-  height: 10%;
-  right: -4%;
+  margin: auto;
+  height: 20px;
+  right: -90px;
   left: auto;
-  width: 20%;
+  width: auto;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg); }
 

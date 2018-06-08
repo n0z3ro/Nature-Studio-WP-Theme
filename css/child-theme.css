@@ -10784,7 +10784,7 @@ h1 {
 
 #top-container {
   min-height: 100%;
-  padding-bottom: 144px;
+  padding-bottom: 177px;
   background-color: #000; }
 
 #top-row {
@@ -10795,8 +10795,8 @@ h1 {
   padding-left: 0; }
 
 #nature-foot-wrap {
-  height: 144px;
-  margin-top: -144px; }
+  height: 177px;
+  margin-top: -177px; }
 
 #nature-foot {
   background-color: #000;
@@ -10809,6 +10809,7 @@ h1 {
   #nature-foot #foot-menu {
     position: relative; }
     #nature-foot #foot-menu .container-fluid {
+      height: auto;
       max-width: 240px;
       position: absolute;
       top: 50%;
@@ -10874,31 +10875,28 @@ h1 {
     margin: 0 auto;
     text-align: center; }
 
-#about-page {
-  /*
-	::-webkit-scrollbar{ 
-		display:none;
-	}
-	*/ }
-  #about-page .content .scrollTo {
-    background: #5CB545;
-    color: #241F21;
-    height: 100vh; }
-  #about-page .content .scrollTo:nth-child(odd) {
-    background: #000;
-    color: #5CB545; }
-  #about-page .content .nopadding {
-    height: auto; }
-    #about-page .content .nopadding img {
-      width: 100%; }
-  #about-page h2 {
-    text-align: center; }
-  #about-page #client-logo-img {
-    max-width: 100%;
-    margin: 5% auto; }
+#about-page .content .carousel-item {
+  background: #5CB545;
+  color: #241F21;
+  height: 100vh; }
+
+#about-page .content .carousel-item:nth-child(odd) {
+  background: #000;
+  color: #5CB545; }
+
+#about-page h2 {
+  text-align: center; }
+
+#about-page #client-logo-img {
+  max-width: 100%;
+  margin: 5% auto; }
+
+#about-page .team-images .row {
+  position: absolute;
+  bottom: 177px; }
 
 .about_header {
-  margin-top: 10%;
+  padding-top: 10%;
   text-align: center;
   text-transform: uppercase; }
 
@@ -10940,7 +10938,7 @@ h1 {
 
 @media (max-width: 575.98px) {
   #about-page .about_header {
-    margin-top: 2%; }
+    padding-top: 2%; }
   #about-page .about_text {
     font-size: 0.8rem; } }
 
@@ -10950,3 +10948,94 @@ h1 {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%; } }
+
+/*Case Studies / King Composer Test*/
+section.kc-elm img {
+  width: 100%; }
+
+section.kc-elm .kc_column,
+section.kc-elm .kc_column_inner {
+  padding-left: 0;
+  padding-right: 0; }
+
+section.kc-elm .kc-col-container {
+  height: 100vh;
+  width: 100vw; }
+
+#Full_Img .kc-col-container {
+  height: auto; }
+
+#Branded_Deliverables {
+  background-image: url(http://localhost:1003/wp-content/uploads/2018/05/Nature_test4.jpg);
+  background-size: cover;
+  background-position: center center; }
+
+#numbers_row img {
+  width: 80%;
+  margin: 0 auto; }
+
+@media (max-width: 1000px) {
+  .kc_column_inner {
+    width: 100% !important; } }
+
+body.page-template-about_full_scroll {
+  overflow: hidden; }
+  body.page-template-about_full_scroll #nature-foot-wrap {
+    position: absolute;
+    height: 177px;
+    position: absolute;
+    bottom: 0; }
+
+/*New vertical carousel*/
+.vert .carousel-item-next.carousel-item-left,
+.vert .carousel-item-prev.carousel-item-right {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.vert .carousel-item-next,
+.vert .active.carousel-item-right {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100% 0); }
+
+.vert .carousel-item-prev,
+.vert .active.carousel-item-left {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0); }
+
+.slide-wrapper {
+  display: block;
+  width: 100%;
+  height: 100vh; }
+  .slide-wrapper .container-fluid {
+    padding: 0;
+    height: 100vh; }
+
+.carousel-inner,
+.carousel,
+.carousel-item,
+.fill {
+  height: 100%;
+  width: 100%;
+  background-position: center center;
+  background-size: cover; }
+
+.carousel-indicators {
+  position: absolute;
+  top: 9%;
+  bottom: 0;
+  margin: 0;
+  height: 10%;
+  right: -4%;
+  left: auto;
+  width: 20%;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.carousel-indicators li {
+  display: block;
+  margin-bottom: 5px;
+  border: 1px solid #00a199; }
+
+.carousel-indicators li.active {
+  margin-bottom: 5px;
+  background: #00a199; }

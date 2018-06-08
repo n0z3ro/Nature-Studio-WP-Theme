@@ -36,6 +36,7 @@ h1{
 	#foot-menu{
 		position:relative;
 		.container-fluid{
+			height:auto;
 			max-width:240px;
 			position: absolute;
 			top: 50%;
@@ -111,26 +112,15 @@ h1{
 	}
 }
 #about-page{
-	/*
-	::-webkit-scrollbar{ 
-		display:none;
-	}
-	*/
 	.content{
-		.scrollTo{
+		.carousel-item{
 			background:$green_bg;
 			color:$dark_txt;
 			height:100vh;
 		}
-		.scrollTo:nth-child(odd) {
+		.carousel-item:nth-child(odd) {
 			background:$dark_bg;
 			color:$green_txt;
-		}
-		.nopadding{
-			height:auto;
-			img{
-				width:100%;
-			}
 		}
 	}
 	h2{
@@ -140,9 +130,15 @@ h1{
 		max-width:100%;
 		margin:5% auto;
 	}
+	.team-images{
+		.row{
+			position:absolute;
+			bottom:0+$footer_height;
+		}
+	}
 }
 .about_header{
-	margin-top:10%;
+	padding-top:10%;
 	text-align:center;
 	text-transform:uppercase;
 }
@@ -200,7 +196,7 @@ h1{
 @include media-breakpoint-down(xs) {
 	#about-page{
 		.about_header{
-			margin-top:2%;
+			padding-top:2%;
 		}
 		.about_text{
 			font-size:0.8rem;
@@ -216,4 +212,108 @@ h1{
 			}
 		}
 	}
+}
+/*Case Studies / King Composer Test*/
+section.kc-elm{
+img{
+width: 100%;
+}
+.kc_column,
+.kc_column_inner{
+padding-left:0;
+padding-right:0;
+}
+.kc-col-container{
+height:100vh;
+width:100vw;
+}
+}
+#Full_Img .kc-col-container{
+	height:auto;
+}
+#Branded_Deliverables{
+background-image:url(http://localhost:1003/wp-content/uploads/2018/05/Nature_test4.jpg);
+background-size:cover;
+background-position: center center;
+}
+#numbers_row img{
+width:80%;
+margin:0 auto;
+}
+@media(max-width:1000px){
+	.kc_column_inner{
+		width:100%!important;
+	}
+}
+// about_full_scroll styling
+body.page-template-about_full_scroll{
+	overflow:hidden;
+	#nature-foot-wrap{
+		position: absolute;
+		height: $footer_height;
+		position: absolute;
+		bottom: 0;
+	}
+}
+/*New vertical carousel*/
+.vert .carousel-item-next.carousel-item-left,
+.vert .carousel-item-prev.carousel-item-right{
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.vert .carousel-item-next,
+.vert .active.carousel-item-right{
+	-webkit-transform: translate3d(0, 100%, 0);
+	transform: translate3d(0, 100% 0);
+}
+
+.vert .carousel-item-prev,
+.vert .active.carousel-item-left{
+	-webkit-transform: translate3d(0,-100%, 0);
+	transform: translate3d(0,-100%, 0);
+}
+
+.slide-wrapper{
+	display:block;
+	width:100%;
+	height:100vh;
+	.container-fluid{
+		padding:0;
+		height:100vh;
+	}
+}
+
+.carousel-inner,
+.carousel,
+.carousel-item,
+.fill {
+    height:100%;
+    width:100%;
+    background-position:center center;
+    background-size:cover;
+}
+.carousel-indicators{
+	position: absolute;
+	top: 9%;
+	bottom: 0;
+	margin: 0;
+	height: 10%;
+	right: -4%;
+	left: auto;
+	width: 20%;
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.carousel-indicators li{
+    display:block;
+    margin-bottom:5px;
+    border:1px solid #00a199;
+}
+.carousel-indicators li.active{
+    margin-bottom:5px; background:#00a199;
+    
 }

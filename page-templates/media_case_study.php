@@ -1,13 +1,10 @@
 <?php
 /**
- * The header for our theme.
- *
- * Displays all of the <head> section and <body> tag
- *
+ * Template Name: Media Case Study
+ * Template Post Type: nat_case_studies
  * @package understrap
  */
 
-// $container = get_theme_mod( 'understrap_container_type' );
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -23,6 +20,12 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
-	<div id="top-container" class="container-fluid">
-		<div id="top-row" class="row">
+<body>
+<?php while ( have_posts() ) : the_post(); ?>
+
+	<?php get_template_part( 'loop-templates/content', 'blank' ); ?>
+
+<?php endwhile; // end of the loop. ?>
+<?php wp_footer(); ?>
+</body>
+</html>

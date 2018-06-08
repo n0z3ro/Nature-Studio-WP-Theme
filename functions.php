@@ -22,7 +22,17 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
-    if ( is_page_template('page-templates/about_full_scroll.php') ) {
-       wp_enqueue_script( 'full-scroll-script', get_stylesheet_directory_uri() . '/js/full_scroll.js', array(), false); 
-    }
+
+}
+add_filter( 'body_class', 'custom_body_class', 10, 2 );
+
+function custom_body_class( $wp_classes, $extra_classes ){
+
+    //filter duplicated body class names
+    $blacklist = array( 'page-template-page-templates','page-template-page-templatesabout_full_scroll-php', );
+//page-template page-template-about_full_scroll
+    $wp_classes = array_diff( $wp_classes, $blacklist );
+
+    // Add the extra classes back untouched
+    return array_merge( $wp_classes, (array) $extra_classes );
 }

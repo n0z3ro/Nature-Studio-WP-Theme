@@ -10949,35 +10949,6 @@ h1 {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%; } }
 
-/*Case Studies / King Composer Test*/
-section.kc-elm img {
-  width: 100%; }
-
-section.kc-elm .kc_column,
-section.kc-elm .kc_column_inner {
-  padding-left: 0;
-  padding-right: 0; }
-
-section.kc-elm .kc-col-container {
-  height: 100vh;
-  width: 100vw; }
-
-#Full_Img .kc-col-container {
-  height: auto; }
-
-#Branded_Deliverables {
-  background-image: url(http://localhost:1003/wp-content/uploads/2018/05/Nature_test4.jpg);
-  background-size: cover;
-  background-position: center center; }
-
-#numbers_row img {
-  width: 80%;
-  margin: 0 auto; }
-
-@media (max-width: 1000px) {
-  .kc_column_inner {
-    width: 100% !important; } }
-
 /*Fullpage Scroll (Vertical Carousel) */
 body.page-template-about_full_scroll {
   overflow: hidden; }

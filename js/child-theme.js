@@ -3968,14 +3968,14 @@ jQuery( document ).ready(function() {
 		jQuery(this).on('touchmove', function(event){
 			var yMove = event.originalEvent.touches[0].pageY;
 			if( Math.floor(yClick - yMove) > 1 ){
-				jQuery('.carousel').carousel('next');
+				jQuery('#vertCarousel').carousel('next');
 			}
 			else if( Math.floor(yClick - yMove) < -1 ){
-				jQuery('.carousel').carousel('prev');
+				jQuery('#vertCarousel').carousel('prev');
 			}
 		});
 
-		jQuery('.carousel').on('touchend', function(){
+		jQuery('#vertCarousel').on('touchend', function(){
 			jQuery(this).off('touchmove');
 		});
 	});
@@ -3990,6 +3990,21 @@ jQuery( document ).ready(function() {
 	//scroll slides on key press
 	document.onkeydown = checkKey;
 
+	//Home crossfade slider
+	jQuery('#crossCarousel').on('slide.bs.carousel', function (e) {
+
+		$to_slide = jQuery(e.relatedTarget).index();
+		
+		jQuery(".crossCarousel-target.active").removeClass("active");
+		jQuery("#client-logo-img [data-slide-to=" + $to_slide + "]").addClass("active");
+	});
+
+	jQuery(".crossCarousel-target").on("click", function(e) {
+		jQuery(this).addClass("active");
+		jQuery("#crossCarousel").carousel(parseInt(jQuery(this).attr("data-slide-to")));
+    	jQuery(".myCarousel-target.active").removeClass("active");
+    	jQuery(this).addClass("active");
+	});
 });
 
 function MouseWheelHandler() {
@@ -4000,9 +4015,9 @@ function MouseWheelHandler() {
 
 	//scrolling down
 	if (delta < 0) {
-		jQuery('.carousel').carousel('next');
+		jQuery('#vertCarousel').carousel('next');
 	}else{
-		jQuery('.carousel').carousel('prev');
+		jQuery('#vertCarousel').carousel('prev');
 	}
 		return false;
 	}
@@ -4014,11 +4029,11 @@ function checkKey(e) {
 
 	if (e.keyCode == '38') {
 		// up arrow
-		jQuery('.carousel').carousel('prev');
+		jQuery('#vertCarousel').carousel('prev');
 	}
 	else if (e.keyCode == '40') {
 		// down arrow
-		jQuery('.carousel').carousel('next');
+		jQuery('#vertCarousel').carousel('next');
 	}
 
 }

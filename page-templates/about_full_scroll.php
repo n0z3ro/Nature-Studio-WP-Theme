@@ -114,17 +114,6 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 								echo 'no content matches about-content category';
 							}
 						?>
-						<!--
-						<div class="carousel-item">
-							<div class="fill">2</div>
-						</div>
-						<div class="carousel-item">
-							<div class="fill">3</div>
-						</div>
-						<div class="carousel-item">
-							<div class="fill">4</div>
-						</div>
-						-->
 						<div class="carousel-item">
 							<div class="fill">
 								<div class="container-fluid team-images">

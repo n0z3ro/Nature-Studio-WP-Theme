@@ -36,3 +36,36 @@ function custom_body_class( $wp_classes, $extra_classes ){
 	return array_merge( $wp_classes, (array) $extra_classes );
 
 }
+function nat_register_widgets() {
+	register_sidebar( array(
+		'name' => __( 'Home Text Left', 'nat' ),
+		'id' => 'home-text-left',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h1 class="home-text-title">',
+		'after_title' => '</h1>'
+	));
+	register_sidebar( array(
+		'name' => __( 'Home Text Center', 'nat' ),
+		'id' => 'home-text-center',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h1 class="home-text-title">',
+		'after_title' => '</h1>'
+	));
+	register_sidebar( array(
+		'name' => __( 'Home Text Right', 'nat' ),
+		'id' => 'home-text-right',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h1 class="home-text-title">',
+		'after_title' => '</h1>'
+	));
+	//remove parent widgets
+	unregister_sidebar( 'right-sidebar' );
+	unregister_sidebar( 'left-sidebar' );
+	unregister_sidebar( 'hero' );
+	unregister_sidebar( 'statichero' );
+	unregister_sidebar( 'footerfull' );
+}
+add_action( 'widgets_init', 'nat_register_widgets', 11 );

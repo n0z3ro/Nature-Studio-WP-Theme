@@ -37,7 +37,6 @@ h1{
 		position:relative;
 		.container-fluid{
 			height:auto;
-			max-width:240px;
 			position: absolute;
 			top: 50%;
 			left:50%;
@@ -110,7 +109,7 @@ h1{
 		list-style-type: none;
 		padding-left: 0px;
 	}
-	.exp-txt{
+	.textwidget{
 		max-width:80%;
 		margin:0 auto;
 		text-align:center;
@@ -159,16 +158,6 @@ h1{
 
 @include media-breakpoint-down(md) {
 	#nature-foot{
-		#foot-menu{
-			.container-fluid{
-				max-width:100%;
-				position: relative;
-				top:0;
-				left:0;
-				transform: none;
-				text-align:center;
-			}
-		}
 		#foot-addy{
 			text-align:right;
 		}
@@ -195,6 +184,21 @@ h1{
 		}
 		.about_text{
 			font-size:0.9rem;
+		}
+	}
+	#nature-foot{
+		#foot-menu{
+			.container-fluid{
+				position: relative;
+				top:0;
+				left:0;
+				transform: none;
+				text-align:center;
+			}
+			.col{
+				flex-basis:100%;
+				margin: 5px 0;
+			}
 		}
 	}
 }

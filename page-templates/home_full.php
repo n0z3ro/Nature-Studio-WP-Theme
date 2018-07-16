@@ -88,7 +88,6 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 										echo ' active';
 									}
 									echo '">';
-									//echo '<img id="logo-scion" src="'.get_stylesheet_directory_uri().'/img/Logo_Scion.png" />';
 									echo '<img src="'.get_post_meta($post->ID, 'nat-logo', true).'" />';
 									echo '</div>';
 									$slide_number++;
@@ -99,43 +98,34 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 								echo 'no featured content yet';
 							}
 						?>
-						<!--
-						<div data-slide-to="0" class="col-6 col-sm-6 col-md-2 crossCarousel-target active">
-							<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" />
-						</div>
-						<div data-slide-to="1" class="col-6 col-sm-6 col-md-2 crossCarousel-target">
-							<img id="logo-spike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Spike.png' ?>" />
-						</div>
-						<div data-slide-to="2" class="col-6 col-sm-6 col-md-2 crossCarousel-target">
-							<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" />
-						</div>
-						<div data-slide-to="3" class="col-6 col-sm-6 col-md-2 crossCarousel-target">
-							<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" />
-						</div>
-						<div data-slide-to="4" class="col-6 col-sm-6 col-md-2 crossCarousel-target">
-							<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" />
-						</div>
-						<div data-slide-to="5" class="col-6 col-sm-6 col-md-2 crossCarousel-target">
-							<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" />
-						</div>
-						-->
 					</div>
 				</div>
 			</div>
 			<div id="nature-exp" class="row">
 				<div class="col-md-4">
+					<!--
 					<h1> WHO WE ARE: </h1>
 					<div class="exp-txt">
 						Nature was created by Nicanor Cruz and is a creative collective. We grow brands from the underground and make them pop. We consult brands and agencies in youth culture and lifestyle. We have a decade and a half of experience in custom
 					</div>
+					-->
+					<?php if( is_active_sidebar( 'home-text-left' ) ) : ?>
+						<?php dynamic_sidebar( 'home-text-left' ); ?>
+					<?php endif; ?>
 				</div>
 				<div class="col-md-4">
+					<!--
 					<h1> WHAT WE DO: </h1>
 					<div class="exp-txt">
 						Nature creates opportunity for our clients to connect with their audiences in distinct, authentic, meaningful and rewarding ways. We are an agency that publishes and specialize in developing, marketing and distributing.... more
 					</div>
+					-->
+					<?php if( is_active_sidebar( 'home-text-center' ) ) : ?>
+						<?php dynamic_sidebar( 'home-text-center' ); ?>
+					<?php endif; ?>
 				</div>
 				<div class="col-md-4">
+					<!--
 					<h1> SERVICES: </h1>
 					<div class="exp-txt">
 						<ul>
@@ -147,6 +137,10 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 							<li>Print, Digital &amp; Experiential</li>
 						</ul>
 					</div>
+					-->
+					<?php if( is_active_sidebar( 'home-text-right' ) ) : ?>
+						<?php dynamic_sidebar( 'home-text-right' ); ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

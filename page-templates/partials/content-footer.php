@@ -28,7 +28,9 @@
 			</div>
 		</div>
 		<div id="foot-addy" class="col-md-3 offset-md-2">
-			<p>Nature Studio</p><p>1060 Hancock St. #17</p><p>Brooklyn, NY 11221</p>
+			<p>Nature Studio<br>
+			1060 Hancock St. #17<br>
+			Brooklyn, NY 11221</p>
 		</div>
 	</div>
 	<div id="legal-line" class="row">

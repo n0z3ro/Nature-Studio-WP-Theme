@@ -88,7 +88,7 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 										echo ' active';
 									}
 									echo '">';
-									echo '<a href="'.get_permalink( $post->ID ) .'">';
+									echo '<a href="'.get_permalink( $post->ID ).'">';
 									echo '<img src="'.get_post_meta($post->ID, 'nat-logo', true).'" />';
 									echo '</a>';
 									echo '</div>';

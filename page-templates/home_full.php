@@ -76,19 +76,21 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 							<h1> CLIENTS: </h1>
 						</div>
 					</div>
-					<div id="client-logo-img" class="row">
+					<div id="client-logo-img" class="row-centered">
 
 						<?php
 							$slide_number=0;
 							if ( $home_content->have_posts() ) {
 								while ( $home_content->have_posts() ) {
 									$home_content->the_post();
-									echo '<div data-slide-to="'.$slide_number.'" class="col-6 col-sm-6 col-md-2 crossCarousel-target';
+									echo '<div data-slide-to="'.$slide_number.'" class="col-centered crossCarousel-target';
 									if($slide_number==0) {
 										echo ' active';
 									}
 									echo '">';
+									echo '<a href="'.get_permalink( $post->ID ) .'">';
 									echo '<img src="'.get_post_meta($post->ID, 'nat-logo', true).'" />';
+									echo '</a>';
 									echo '</div>';
 									$slide_number++;
 									
@@ -103,41 +105,16 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 			</div>
 			<div id="nature-exp" class="row">
 				<div class="col-md-4">
-					<!--
-					<h1> WHO WE ARE: </h1>
-					<div class="exp-txt">
-						Nature was created by Nicanor Cruz and is a creative collective. We grow brands from the underground and make them pop. We consult brands and agencies in youth culture and lifestyle. We have a decade and a half of experience in custom
-					</div>
-					-->
 					<?php if( is_active_sidebar( 'home-text-left' ) ) : ?>
 						<?php dynamic_sidebar( 'home-text-left' ); ?>
 					<?php endif; ?>
 				</div>
 				<div class="col-md-4">
-					<!--
-					<h1> WHAT WE DO: </h1>
-					<div class="exp-txt">
-						Nature creates opportunity for our clients to connect with their audiences in distinct, authentic, meaningful and rewarding ways. We are an agency that publishes and specialize in developing, marketing and distributing.... more
-					</div>
-					-->
 					<?php if( is_active_sidebar( 'home-text-center' ) ) : ?>
 						<?php dynamic_sidebar( 'home-text-center' ); ?>
 					<?php endif; ?>
 				</div>
 				<div class="col-md-4">
-					<!--
-					<h1> SERVICES: </h1>
-					<div class="exp-txt">
-						<ul>
-							<li>Market &amp; Culture Research</li>
-							<li>Product &amp; Brand Development</li>
-							<li>Strategy &amp; Management</li>
-							<li>Content Development &amp; Production</li>
-							<li>Media &amp; Advertising</li>
-							<li>Print, Digital &amp; Experiential</li>
-						</ul>
-					</div>
-					-->
 					<?php if( is_active_sidebar( 'home-text-right' ) ) : ?>
 						<?php dynamic_sidebar( 'home-text-right' ); ?>
 					<?php endif; ?>

@@ -334,3 +334,16 @@ body.page-template-about_full_scroll{
 		background-size:cover;
 	}
 }
+
+/* Centered Columns */
+.row-centered {
+	text-align:center;
+}
+.col-centered {
+	display:inline-block;
+	float:none;
+	text-align:left;
+	width:200px;
+	max-width:12%;
+	margin:0 2%;
+}

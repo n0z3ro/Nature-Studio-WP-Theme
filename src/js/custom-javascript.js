@@ -39,7 +39,7 @@ jQuery( document ).ready(function() {
 		jQuery("#client-logo-img [data-slide-to=" + $to_slide + "]").addClass("active");
 	});
 
-	jQuery(".crossCarousel-target").on("click", function(e) {
+	jQuery(".crossCarousel-target").on("mouseover", function(e) {
 		jQuery(this).addClass("active");
 		jQuery("#crossCarousel").carousel(parseInt(jQuery(this).attr("data-slide-to")));
     	jQuery(".myCarousel-target.active").removeClass("active");

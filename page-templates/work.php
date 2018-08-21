@@ -19,8 +19,7 @@ if ( $work_content->have_posts() ) {
 while ( $work_content->have_posts() ) {
 	$work_content->the_post();
 	$nat_thumb = get_post_meta($post->ID, 'nat-thumb', true);
-	echo '<div class="col-6">';
-	echo '<div class="work-img">';
+	echo '<div class="col-12 col-md-6"><div class="work-img">';
 	if(strlen($nat_thumb) > 0){
 		echo '<a href="'.get_permalink( $post->ID ).'"><img src="'.$nat_thumb.'"/></a>';
 	}else{
@@ -30,12 +29,14 @@ while ( $work_content->have_posts() ) {
 			echo '<a href="'.get_permalink( $post->ID ).'"><img src="'.$featured_img_url.'"/></a>';
 			
 		}else{
+			echo '<div><a href="'.get_permalink( $post->ID ).'">';
 			echo the_title();
+			echo '<br>';
 			echo get_post_meta($post->ID, 'nat-project', true);
+			echo '</a></div>';
 		}
 	}
-	echo '</div>';
-	echo '</div>';
+	echo '</div></div>';
 }
 }else{
 	echo '<div class="col">No samples yet</div>';

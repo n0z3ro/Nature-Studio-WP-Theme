@@ -71,7 +71,7 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 							if ( $home_content->have_posts() ) {
 								while ( $home_content->have_posts() ) {
 									$home_content->the_post();
-									echo '<div data-slide-to="'.$slide_number.'" class="col-6 col-md-2 crossCarousel-target';
+									echo '<div data-slide-to="'.$slide_number.'" class="col-6 col-md-4 col-lg-2 crossCarousel-target';
 									if($slide_number==0) {
 										echo ' active';
 									}

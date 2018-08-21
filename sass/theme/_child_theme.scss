@@ -188,7 +188,15 @@ h1{
 	margin-left:auto;
 	margin-right:auto;
 }
-
+.page-template-work{
+	.work-img{
+		text-align:center;
+		color:$green_txt;
+		div{
+			margin:10% 0;
+		}
+	}
+}
 @include media-breakpoint-down(md) {
 	#nature-exp h1{
 		padding-top:5%;
@@ -196,8 +204,15 @@ h1{
 }
 
 @include media-breakpoint-down(sm) {
-	#home-page #nature-exp h1{
-		padding-top:8%;
+	#home-page{
+		#nature-exp h1{
+			padding-top:8%;
+		}
+		.carousel-caption{
+			right: 60%;
+			bottom: 0;
+			left: 0;
+		}
 	}
 	#about-page{
 		#client-logo-img{
@@ -292,27 +307,21 @@ body.page-template-about_full_scroll{
 		background-size:cover;
 	}
 	.carousel-indicators{
-		position:absolute;
 		top:0;
+		right:5%;
 		bottom:0;
-		margin:auto;
-		height:20px;
-		right:-70px;
 		left:auto;
-		width:auto;
-		-webkit-transform: rotate(90deg);
-		-moz-transform: rotate(90deg);
-		-ms-transform: rotate(90deg);
-		-o-transform: rotate(90deg);
-		transform: rotate(90deg);
-	}
-	.carousel-indicators li{
-		display:block;
-		margin-bottom:5px;
-		border:1px solid #00a199;
-	}
-	.carousel-indicators li.active{
-		margin-bottom:5px; background:#00a199;
+		padding-left: 0;
+		margin-right: 0;
+		margin-left: 0;
+		flex-direction:column;
+		li{
+			display:block;
+			width:5px;
+			height:28px;
+			margin-bottom:5px;
+			border:1px solid #00a199;
+		}
 	}
 }
 .slide-wrapper{

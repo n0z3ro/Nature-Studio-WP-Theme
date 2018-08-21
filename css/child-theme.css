@@ -10942,6 +10942,12 @@ h1 {
   margin-left: auto;
   margin-right: auto; }
 
+.page-template-work .work-img {
+  text-align: center;
+  color: #5CB545; }
+  .page-template-work .work-img div {
+    margin: 10% 0; }
+
 @media (max-width: 991.98px) {
   #nature-exp h1 {
     padding-top: 5%; } }
@@ -10949,6 +10955,10 @@ h1 {
 @media (max-width: 767.98px) {
   #home-page #nature-exp h1 {
     padding-top: 8%; }
+  #home-page .carousel-caption {
+    right: 60%;
+    bottom: 0;
+    left: 0; }
   #about-page #client-logo-img {
     margin: 0 auto; }
     #about-page #client-logo-img img {
@@ -11019,25 +11029,23 @@ body.page-template-about_full_scroll {
   background-size: cover; }
 
 #vertCarousel .carousel-indicators {
-  position: absolute;
   top: 0;
+  right: 5%;
   bottom: 0;
-  margin: auto;
-  height: 20px;
-  right: -70px;
   left: auto;
-  width: auto;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg); }
-
-#vertCarousel .carousel-indicators li {
-  display: block;
-  margin-bottom: 5px;
-  border: 1px solid #00a199; }
-
-#vertCarousel .carousel-indicators li.active {
-  margin-bottom: 5px;
-  background: #00a199; }
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  #vertCarousel .carousel-indicators li {
+    display: block;
+    width: 5px;
+    height: 28px;
+    margin-bottom: 5px;
+    border: 1px solid #00a199; }
 
 .slide-wrapper {
   display: block;

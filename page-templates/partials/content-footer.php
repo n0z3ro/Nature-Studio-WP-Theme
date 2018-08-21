@@ -2,14 +2,14 @@
 <footer id="nature-foot-wrap" class="container-fluid">
 	<div id="nature-foot" class="row">
 		<div id="foot-logo" class="col-md-3"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" /></a></div>
-		<div id="foot-menu" class="col-md-4">
+		<div id="foot-menu" class="col-md-5 col-xl-3">
 			<div class="container-fluid">
-				<div class="row">
+				<div class="row justify-content-center">
 					<?php
 					$nav_args = array(
 						'menu' => 'primary',
 						'container' => false,
-						'before' => '<div class="col align-middle">',
+						'before' => '<div class="col col-md-3 align-middle">',
 						'after' => '</div>',
 						'echo' => false,
 						'items_wrap' => '%3$s',
@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="foot-addy" class="col-md-3 offset-md-2">
+		<div id="foot-addy" class="col-md-3 offset-md-1 offset-xl-3">
 			<p>Nature Studio<br>
 			1060 Hancock St. #17<br>
 			Brooklyn, NY 11221</p>

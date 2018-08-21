@@ -1,7 +1,7 @@
 <?php //seperated footer body to call as page content when needed ?>
 <footer id="nature-foot-wrap" class="container-fluid">
 	<div id="nature-foot" class="row">
-		<div id="foot-logo" class="col-md-3"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" /></a></div>
+		<div id="foot-logo" class="col-md-3"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" alt="Nature Studio" /></a></div>
 		<div id="foot-menu" class="col-md-5 col-xl-3">
 			<div class="container-fluid">
 				<div class="row justify-content-center">
@@ -18,7 +18,6 @@
 
 					echo strip_tags(wp_nav_menu( $nav_args ), '<div><a>' );
 					?>
-					<!-- wp_nav_menu( array( 'items_wrap' => '%3$s' ) ); -->
 				</div>
 			</div>
 		</div>

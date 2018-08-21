@@ -47,49 +47,49 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 												<div class="container-fluid">
 													<div id="client-logo-img" class="row">
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" />
+															<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" alt="Scion" />
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-spike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Spike.png' ?>" />
+															<img id="logo-spike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Spike.png' ?>" alt="Spike"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" />
+															<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" alt="Pepsi"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" />
+															<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" alt="Nike"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" />
+															<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" alt="EA Sports"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" />
+															<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" alt="Mountain Dew"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-bounce" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Bounce.png' ?>" />
+															<img id="logo-bounce" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Bounce.png' ?>" alt="Bounce"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-goods" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Goods.png' ?>" />
+															<img id="logo-goods" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Goods.png' ?>" alt="Goods"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-frank" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Frank.png' ?>" />
+															<img id="logo-frank" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Frank.png' ?>" alt="Frank"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-pioneer" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pioneer.png' ?>" />
+															<img id="logo-pioneer" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pioneer.png' ?>" alt="Pioneer"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-shure" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Shure.png' ?>" />
+															<img id="logo-shure" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Shure.png' ?>" alt="Shure"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-stanton" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Stanton.png' ?>" />
+															<img id="logo-stanton" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Stanton.png' ?>" alt="Stanton"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2 offset-md-6">
-															<img id="logo-zo" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_ZenithOptimedia.png' ?>" />
+															<img id="logo-zo" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_ZenithOptimedia.png' ?>" alt="Zenith Optimedia"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-tablist" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Tablist.png' ?>" />
+															<img id="logo-tablist" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Tablist.png' ?>" alt="Tablist"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-nyparks" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NYParksRec.png' ?>" />
+															<img id="logo-nyparks" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NYParksRec.png' ?>" alt="NY Parks and Rec"/>
 														</div>
 													</div>
 												</div>
@@ -118,10 +118,10 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 							<div class="fill">
 								<div class="container-fluid team-images">
 									<div class="row">
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" /></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" /></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" /></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" /></div>
+										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" alt="Nik"/></div>
+										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" alt="Tamika"/></div>
+										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" alt="John"/></div>
+										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" alt="Clint"/></div>
 									</div>
 								</div>
 

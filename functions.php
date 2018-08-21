@@ -69,3 +69,11 @@ function nat_register_widgets() {
 	unregister_sidebar( 'footerfull' );
 }
 add_action( 'widgets_init', 'nat_register_widgets', 11 );
+
+//remove unnecessary tags for validation
+add_filter('style_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
+
+function myplugin_remove_type_attr($tag, $handle) {
+    return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
+}

@@ -77,7 +77,9 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 									}
 									echo '">';
 									echo '<a href="'.get_permalink( $post->ID ).'">';
-									echo '<img src="'.get_post_meta($post->ID, 'nat-logo', true).'" />';
+									echo '<img src="'.get_post_meta($post->ID, 'nat-logo', true).'" alt="';
+									echo the_title_attribute();
+									echo '" />';
 									echo '</a>';
 									echo '</div>';
 									$slide_number++;

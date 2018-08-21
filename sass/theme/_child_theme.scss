@@ -11,7 +11,6 @@ h1{
 }
 #top-container{
 	min-height:100%;
-	/*padding-bottom:$footer_height;*/
 	background-color:$dark_bg;
 }
 #top-row{
@@ -21,12 +20,10 @@ h1{
 	padding-right:0;
 	padding-left:0;
 }
-/*
-#nature-foot-wrap{
-	height:$footer_height;
-	margin-top:-$footer_height;
+#foot-logo :hover {
+	-webkit-filter: brightness(0) invert(1);
+	filter: brightness(0) invert(1);
 }
-*/
 #nature-foot{
 	background-color:$dark_bg;
 	padding-bottom: 4%;
@@ -92,6 +89,12 @@ h1{
 	}
 	.carousel-indicators{
 		position:relative;
+	}
+	.carousel-caption{
+		background-color:rgba(0,0,0,.4);
+		right: 80%;
+		bottom: 40%;
+		left: 0;
 	}
 	#client-logo-img{
 		max-width:80%;
@@ -333,17 +336,4 @@ body.page-template-about_full_scroll{
 		background-position:center center;
 		background-size:cover;
 	}
-}
-
-/* Centered Columns */
-.row-centered {
-	text-align:center;
-}
-.col-centered {
-	display:inline-block;
-	float:none;
-	text-align:left;
-	width:200px;
-	max-width:12%;
-	margin:0 2%;
 }

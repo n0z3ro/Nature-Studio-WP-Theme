@@ -18,13 +18,7 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 			<div class="container-fluid">
 				<div class="row">
 					<div id="crossCarousel" class="carousel slide carousel-fade" data-interval="10000" data-ride="carousel">
-
 						<div class="carousel-inner" role="listbox">
-							<!--
-							<div class="carousel-item active">
-								<div class="splash-img" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/NatureStudio-EA_Splash.jpg' ?>')"></div>
-							</div>
-							-->
 							<?php
 								$slide_number=0;
 								if ( $home_content->have_posts() ) {
@@ -41,10 +35,12 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 										}else{
 											//missing image fallback
 											echo'<div class="splash-img"></div>';
-											echo '<div class="carousel-caption d-none d-md-block"><h5>';
-											echo the_title();
-											echo '</h5><p>sub header</p></div>';
 										}
+										echo '<div class="carousel-caption"><h5>';
+										echo the_title();
+										echo '</h5><p>';
+										echo get_post_meta($post->ID, 'nat-project', true);
+										echo '</p></div>';
 										echo '</div>';
 										$slide_number++;
 									}
@@ -54,14 +50,6 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 								wp_reset_postdata();
 							?>
 						</div>
-						<a class="carousel-control-prev" href="#crossCarousel" role="button" data-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="sr-only">Previous</span>
-						</a>
-						<a class="carousel-control-next" href="#crossCarousel" role="button" data-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="sr-only">Next</span>
-						</a>
 					</div>
 				</div>
 			</div>
@@ -76,14 +64,14 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 							<h1> CLIENTS: </h1>
 						</div>
 					</div>
-					<div id="client-logo-img" class="row-centered">
+					<div id="client-logo-img" class="row justify-content-center">
 
 						<?php
 							$slide_number=0;
 							if ( $home_content->have_posts() ) {
 								while ( $home_content->have_posts() ) {
 									$home_content->the_post();
-									echo '<div data-slide-to="'.$slide_number.'" class="col-centered crossCarousel-target';
+									echo '<div data-slide-to="'.$slide_number.'" class="col-6 col-md-2 crossCarousel-target';
 									if($slide_number==0) {
 										echo ' active';
 									}

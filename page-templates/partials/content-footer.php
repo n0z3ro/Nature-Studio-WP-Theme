@@ -1,15 +1,10 @@
 <?php //seperated footer body to call as page content when needed ?>
 <footer id="nature-foot-wrap" class="container-fluid">
 	<div id="nature-foot" class="row">
-		<div id="foot-logo" class="col-md-3"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" /></div>
+		<div id="foot-logo" class="col-md-3"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" /></a></div>
 		<div id="foot-menu" class="col-md-4">
 			<div class="container-fluid">
 				<div class="row">
-					<!--
-					<div class="col-md-4 align-middle"><a href="#">Work</a></div>
-					<div class="col-md-4 align-middle"><a href="#">About</a></div>
-					<div class="col-md-4 align-middle"><a href="#">Contact</a></div>
-					-->
 					<?php
 					$nav_args = array(
 						'menu' => 'primary',

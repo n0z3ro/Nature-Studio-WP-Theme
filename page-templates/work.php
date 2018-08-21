@@ -18,20 +18,27 @@ $work_content = new WP_Query( array( 'post_type' => 'nat_case_studies' ) );
 if ( $work_content->have_posts() ) {
 while ( $work_content->have_posts() ) {
 	$work_content->the_post();
+	$nat_thumb = get_post_meta($post->ID, 'nat-thumb', true);
 	echo '<div class="col-6">';
-	if(has_post_thumbnail()){
-		$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
-		echo '<div class="work-img">';
-		echo '<a href="'.get_permalink( $post->ID ).'"><img src="'.$featured_img_url.'"/></a>';
-		echo '</div>';
+	echo '<div class="work-img">';
+	if(strlen($nat_thumb) > 0){
+		echo '<a href="'.get_permalink( $post->ID ).'"><img src="'.$nat_thumb.'"/></a>';
 	}else{
-		echo the_title();
-		echo '</h5><p>sub header</p></div>';
+		if(has_post_thumbnail()){
+			$featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
+			
+			echo '<a href="'.get_permalink( $post->ID ).'"><img src="'.$featured_img_url.'"/></a>';
+			
+		}else{
+			echo the_title();
+			echo get_post_meta($post->ID, 'nat-project', true);
+		}
 	}
+	echo '</div>';
 	echo '</div>';
 }
 }else{
-echo '<div class="carousel-item active">No featured posts yet</div>';
+	echo '<div class="col">No samples yet</div>';
 }
 wp_reset_postdata();
 ?>

@@ -36,11 +36,11 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 											//missing image fallback
 											echo'<div class="splash-img"></div>';
 										}
-										echo '<div class="carousel-caption"><h5>';
+										echo '<div class="carousel-caption"><a href="'.get_permalink( $post->ID ).'"><h5>';
 										echo the_title();
 										echo '</h5><p>';
 										echo get_post_meta($post->ID, 'nat-project', true);
-										echo '</p></div>';
+										echo '</p></a></div>';
 										echo '</div>';
 										$slide_number++;
 									}

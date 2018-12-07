@@ -29,6 +29,7 @@ h1{
 	padding-bottom: 4%;
 	font-size: 0.8125rem;
 	line-height: 1rem;
+	text-align:center;
 	img{
 		margin: 0 auto;
 		display: block;
@@ -46,13 +47,6 @@ h1{
 	#foot-addy{
 		color:$green_txt;
 		white-space: nowrap;
-		&:before {
-			content: '';
-			display: inline-block;
-			height: 100%;
-			vertical-align: middle;
-			margin-right: -0.25em; /* Adjusts for spacing */
-		}
 		p{
 			margin-bottom:0;
 			display: inline-block;
@@ -62,8 +56,8 @@ h1{
 }
 #legal-line{
 	text-align:center;
-	background-color:$primary;
-	color:$dark_txt;
+	background-color:$bright_bg;
+	color:$green_txt;
 	padding-top: .25%;
 	padding-bottom: .25%;
 	font-size: 0.6875rem;

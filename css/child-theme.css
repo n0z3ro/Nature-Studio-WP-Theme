@@ -10800,25 +10800,20 @@ h1 {
 
 #nature-foot {
   background-color: #000;
-  padding-bottom: 4%;
   font-size: 0.8125rem;
   line-height: 1rem;
-  text-align: center; }
+  text-align: center;
+  text-transform: uppercase; }
   #nature-foot img {
     margin: 0 auto;
     display: block; }
   #nature-foot #foot-menu {
-    position: relative; }
-    #nature-foot #foot-menu .container-fluid {
-      height: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%); }
+    padding: 1% 0 2%; }
   #nature-foot #foot-addy {
-    color: #5CB545;
-    white-space: nowrap; }
+    color: #241F21;
+    white-space: nowrap;
+    background-color: #5CB545;
+    padding: 1% 0; }
     #nature-foot #foot-addy p {
       margin-bottom: 0;
       display: inline-block;
@@ -10830,7 +10825,9 @@ h1 {
   color: #5CB545;
   padding-top: .25%;
   padding-bottom: .25%;
-  font-size: 0.6875rem; }
+  font-size: 0.64rem;
+  font-weight: 300;
+  letter-spacing: .03rem; }
 
 #home-page .jumbotron {
   padding: 0;
@@ -10961,20 +10958,7 @@ h1 {
   #about-page h2 {
     font-size: 1.75rem; }
   #about-page .about_text {
-    font-size: 0.9rem; }
-  #nature-foot #foot-menu .container-fluid {
-    position: relative;
-    top: 0;
-    left: 0;
-    -webkit-transform: none;
-            transform: none;
-    text-align: center; }
-  #nature-foot #foot-menu .col {
-    -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
-    margin: 5px 0; }
-  #nature-foot #foot-addy {
-    text-align: right; } }
+    font-size: 0.9rem; } }
 
 @media (max-width: 575.98px) {
   #about-page .about_header {

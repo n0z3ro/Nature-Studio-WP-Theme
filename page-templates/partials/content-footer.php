@@ -9,7 +9,7 @@
 					$nav_args = array(
 						'menu' => 'primary',
 						'container' => false,
-						'before' => '<div class="col col-md-3 align-middle">',
+						'before' => '<div class="col col-sm-3 col-md-1 align-middle">',
 						'after' => '</div>',
 						'echo' => false,
 						'items_wrap' => '%3$s',

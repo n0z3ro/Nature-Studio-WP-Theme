@@ -26,27 +26,22 @@ h1{
 }
 #nature-foot{
 	background-color:$dark_bg;
-	padding-bottom: 4%;
 	font-size: 0.8125rem;
 	line-height: 1rem;
 	text-align:center;
+	text-transform:uppercase;
 	img{
 		margin: 0 auto;
 		display: block;
 	}
 	#foot-menu{
-		position:relative;
-		.container-fluid{
-			height:auto;
-			position: absolute;
-			top: 50%;
-			left:50%;
-			transform: translate(-50%,-50%);
-		}
+		padding: 1% 0 2%;
 	}
 	#foot-addy{
-		color:$green_txt;
+		color:$dark_txt;
 		white-space: nowrap;
+		background-color:$green_bg;
+		padding: 1% 0;
 		p{
 			margin-bottom:0;
 			display: inline-block;
@@ -60,7 +55,9 @@ h1{
 	color:$green_txt;
 	padding-top: .25%;
 	padding-bottom: .25%;
-	font-size: 0.6875rem;
+	font-size: 0.64rem;
+	font-weight:300;
+	letter-spacing: .03rem;
 }
 #home-page{
 	.jumbotron{
@@ -221,24 +218,6 @@ h1{
 		}
 		.about_text{
 			font-size:0.9rem;
-		}
-	}
-	#nature-foot{
-		#foot-menu{
-			.container-fluid{
-				position: relative;
-				top:0;
-				left:0;
-				transform: none;
-				text-align:center;
-			}
-			.col{
-				flex-basis:100%;
-				margin: 5px 0;
-			}
-		}
-		#foot-addy{
-			text-align:right;
 		}
 	}
 }

@@ -10798,6 +10798,25 @@ h1 {
   -webkit-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1); }
 
+#casestudies-foot-wrap {
+  font-size: 26px;
+  color: #5CB545;
+  background-color: #000;
+  text-align: center;
+  padding-top: 6%;
+  padding-bottom: 6%; }
+  #casestudies-foot-wrap a {
+    font-size: 18px;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 15px 0;
+    border: 2px solid #5CB545;
+    font-weight: 700; }
+    #casestudies-foot-wrap a:hover {
+      text-decoration: none;
+      color: #FFF;
+      border: 2px solid #FFF; }
+
 #nature-foot {
   background-color: #000;
   font-size: 0.8125rem;
@@ -10873,8 +10892,7 @@ h1 {
   margin: 0 auto;
   display: block; }
 
-#client-logo-img .active,
-#client-logo-img :hover {
+#client-logo-img .active, #client-logo-img:hover {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1); }
 

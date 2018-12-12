@@ -24,6 +24,27 @@ h1{
 	-webkit-filter: brightness(0) invert(1);
 	filter: brightness(0) invert(1);
 }
+#casestudies-foot-wrap{
+	font-size:26px;
+	color:$green_txt;
+	background-color:$dark_bg;
+	text-align:center;
+	padding-top:6%;
+	padding-bottom:6%;
+	a{
+		font-size:18px;
+		display:inline-block;
+		padding: 10px 20px;
+		margin: 20px 15px 0;
+		border: 2px solid $green_bg;
+		font-weight:700;
+		&:hover{
+			text-decoration:none;
+			color:$bright_txt;
+			border: 2px solid $bright_bg;
+		}
+	}
+}
 #nature-foot{
 	background-color:$dark_bg;
 	font-size: 0.8125rem;
@@ -110,7 +131,7 @@ h1{
 		display:block;
 	}
 	.active,
-	:hover{
+	&:hover{
 		filter:brightness(0) invert(1);
 	}
 }
@@ -241,7 +262,6 @@ h1{
 		}
 	}
 }
-
 /*Fullpage Scroll (Vertical Carousel) */
 body.page-template-about_full_scroll{
 	overflow:hidden;

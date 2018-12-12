@@ -16,10 +16,12 @@ $dark_txt: #241F21;
 
 $dark_bg: #000;
 
-$bright_bg: #FFF;
+$bright_txt: #FFF;
+
+$bright_bg: $bright_txt;
 
 $green_txt: #5CB545;
 
-$green_bg: #5CB545;
+$green_bg: $green_txt;
 
 $footer_height: 17%;

@@ -1,4 +1,4 @@
-<?php //seperated footer body to call as page content when needed ?>
+<?php ?>
 <footer id="nature-foot-wrap" class="container-fluid">
 	<div id="nature-foot" class="row">
 		<div id="foot-logo" class="col-md-12 col-xl-12"><a href="<?php echo get_home_url(); ?>"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_NatureStudio.png' ?>" alt="Nature Studio" /></a></div>

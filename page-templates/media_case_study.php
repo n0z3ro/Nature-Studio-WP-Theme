@@ -6,11 +6,13 @@
  */
 get_header();
 ?>
+<div id="case-studies" class="container-fluid">
+	<div class="row">
+		<?php while ( have_posts() ) : the_post(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+			<?php get_template_part( 'loop-templates/content', 'blank' ); ?>
 
-	<?php get_template_part( 'loop-templates/content', 'blank' ); ?>
-
-<?php endwhile; // end of the loop. ?>
-
+		<?php endwhile; // end of the loop. ?>
+		</div>
+	</div>
 <?php get_footer(); ?>

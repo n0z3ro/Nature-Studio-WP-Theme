@@ -9,6 +9,13 @@ h1{
 	font-size:.8rem;
 	text-align:center;
 }
+a{
+	transition: $font_easing;
+	&:hover{
+		text-decoration:none;
+		color:$bright_txt;
+	}
+}
 #top-container{
 	min-height:100%;
 	background-color:$dark_bg;
@@ -20,9 +27,13 @@ h1{
 	padding-right:0;
 	padding-left:0;
 }
-#foot-logo :hover {
-	-webkit-filter: brightness(0) invert(1);
-	filter: brightness(0) invert(1);
+#foot-logo{
+	transition: filter $one_s_ease;
+	-webkit-transition : -webkit-filter $one_s_ease;
+	&:hover {
+		-webkit-filter: brightness(0) invert(1);
+		filter: brightness(0) invert(1);
+	}
 }
 #casestudies-foot-wrap{
 	font-size:26px;
@@ -38,6 +49,8 @@ h1{
 		margin: 20px 15px 0;
 		border: 2px solid $green_bg;
 		font-weight:700;
+		transition: border 0.5s ease;
+		transition: $font_easing;
 		&:hover{
 			text-decoration:none;
 			color:$bright_txt;
@@ -207,6 +220,77 @@ h1{
 		div{
 			margin:10% 0;
 		}
+	}
+}
+#case-studies{
+	section{
+		background-color:$bright_bg;
+		padding:$casestudy_padding;
+		//min-height:100vh;
+		&#full_img{
+			padding:0%;
+		}
+	}
+	#testimonial{
+		background-color:$dark_bg;
+		color: #41AD49;
+		font-size: 1.5rem;
+		font-weight: 200;
+	}
+	#effects{
+	}
+	#data{
+		background-color:#FEFEFE;
+	}
+	#strategy{
+		/**/
+	}
+	#assets,
+	#deliverables{
+		padding:0;
+		.scapt{
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: auto;
+			padding: 1% 2%;
+			margin:0;
+			background-color: $primary;
+			color:$bright_txt;
+			text-transform: uppercase;
+		}
+		.cs-third-img{
+			img{
+				min-width:100%;
+			}
+			.scapt{
+				padding: 3% 5%;
+				bottom: 0;
+				top: 94%;
+				left: 0;
+				max-width: 80%;
+				width: 500px;
+				left: calc(50% - 250px);
+			}
+		}
+		.cs-half-img{
+			img{
+				min-width: 100%;
+			}
+		}
+		.cs-full-img{
+			img{
+				min-width:100%;
+			}
+		}
+		.media-brand{
+			width: 60%;
+			margin: 0 auto;
+			display: block;
+			float: none;
+		}
+
 	}
 }
 @include media-breakpoint-down(md) {

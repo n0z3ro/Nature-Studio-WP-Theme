@@ -7,14 +7,21 @@
 
 
 //
+// Font Sizing
+//
+
+$root_font: 10px; //set for rem conversions
+
+
+//
 // Color system
 //
 
 $primary: #4EAB36;
 
-$dark_txt: #241F21;
+$dark_txt: #000;
 
-$dark_bg: #000;
+$dark_bg: $dark_txt;
 
 $bright_txt: #FFF;
 
@@ -37,3 +44,26 @@ $casestudy_padding: 16%;
 //
 $one_s_ease: 1.0s ease-in-out;
 $font_easing: color $one_s_ease;
+$color_filter_light: brightness(0) invert(1);
+
+//
+// Case Studies
+//
+@mixin scapt {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: auto;
+	padding: 1% 2%;
+	margin:0;
+	background-color: $primary;
+	color:$bright_txt;
+	text-transform: uppercase;
+	font-weight:900;
+	font-size:1.4rem;
+	line-height:1.68rem;
+	letter-spacing: .1rem;
+	float:none;
+	text-align:center;
+}

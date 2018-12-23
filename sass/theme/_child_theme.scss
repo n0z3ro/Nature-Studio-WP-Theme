@@ -3,11 +3,35 @@ body{
 	height:100%;
 	width:100%;
 	margin:0;
-	font-family: 'Work Sans', sans-serif;
+	font-family: 'Gothic A1', sans-serif;
+	font-size: $root_font;
+	font-weight:400;
+	color:$dark_txt;
+	letter-spacing:normal;
+}
+h1,h2,h3,h4,h5,h6{
+	margin-bottom:0;
+}
+h1,h2{
+	text-align:center;
 }
 h1{
-	font-size:.8rem;
-	text-align:center;
+	font-size:1.5rem;
+	line-height:1.8rem;
+	font-weight:900;
+}
+h2{
+	font-size:1.3rem;
+	font-weight:900;
+	line-height:1.56rem;
+	color:$green_txt;
+	margin-top:1.3rem;
+	letter-spacing: .1rem;
+}
+div,p,li,a, input{
+	font-size:1.7rem;
+	line-height:2.16rem;
+	font-weight:100;
 }
 a{
 	transition: $font_easing;
@@ -31,8 +55,8 @@ a{
 	transition: filter $one_s_ease;
 	-webkit-transition : -webkit-filter $one_s_ease;
 	&:hover {
-		-webkit-filter: brightness(0) invert(1);
-		filter: brightness(0) invert(1);
+		-webkit-filter: $color_filter_light;
+		filter: $color_filter_light;
 	}
 }
 #casestudies-foot-wrap{
@@ -70,28 +94,39 @@ a{
 	}
 	#foot-menu{
 		padding: 1% 0 2%;
+		.col{
+			max-width:100px;
+		}
+		a{
+			letter-spacing:default;
+			font-size:1.2rem;
+			line-height:2.36rem;
+			font-weight:500;
+		}
 	}
 	#foot-addy{
 		color:$dark_txt;
 		white-space: nowrap;
 		background-color:$green_bg;
-		padding: 1% 0;
 		p{
 			margin-bottom:0;
 			display: inline-block;
 			vertical-align: middle;
+			letter-spacing:.1rem;
+			font-size:1.1rem;
+			line-height:3.3rem;
+			font-weight:900;
 		}
 	}
 }
-#legal-line{
+#legal-line div{
 	text-align:center;
 	background-color:$bright_bg;
 	color:$green_txt;
-	padding-top: .25%;
-	padding-bottom: .25%;
-	font-size: 0.64rem;
+	line-height:3rem;
+	font-size: 1rem;
 	font-weight:300;
-	letter-spacing: .03rem;
+	letter-spacing: default;
 }
 #home-page{
 	.jumbotron{
@@ -124,29 +159,33 @@ a{
 	#client-logo-img{
 		max-width:80%;
 		margin: 1% auto 4% auto;
+			img{
+				margin:0 auto;
+				display:block;
+				transition: filter $one_s_ease;
+				&:hover{
+					filter:$color_filter_light;
+				}
+			}
+			a{
+				display:block;
+			}
+			.active{
+				img{
+					filter:$color_filter_light;
+				}
+			}
 	}
+
 	#client-spotlight{
 		h1{
 			padding-top:5%;
 			color:$green_txt;
 			padding-bottom:2%;
 			margin-bottom:0;
-			font-size:0.9375rem;
-			font-weight:600;
-
 		}
 	}
 
-}
-#client-logo-img{
-	img{
-		margin:0 auto;
-		display:block;
-	}
-	.active,
-	&:hover{
-		filter:brightness(0) invert(1);
-	}
 }
 #nature-exp{
 	color:$green_txt;
@@ -157,15 +196,11 @@ a{
 		padding-right:0;
 	}
 	.home-text-title{
-		font-weight:600;
-		font-size:0.9375rem;
+
 	}
 	.textwidget{
 		margin: 0 17%;
 		text-align:center;
-		line-height: 1.3125rem;
-		font-weight: 200;
-		font-size: 1.125rem;
 	}
 	ul{
 		text-align: center;
@@ -208,7 +243,6 @@ a{
     content: ": ";
 }
 .about_text{
-	font-size:1.25rem;
 	max-width:85%;
 	margin-left:auto;
 	margin-right:auto;
@@ -226,7 +260,6 @@ a{
 	section{
 		background-color:$bright_bg;
 		padding:$casestudy_padding;
-		//min-height:100vh;
 		&#full_img{
 			padding:0%;
 		}
@@ -239,39 +272,61 @@ a{
 	}
 	#effects{
 	}
+	#brief{
+		.brief_details{
+			text-align:center;
+		}
+		span{
+			font-size:1.4rem;
+			line-height:1.4rem;
+			font-weight:300;
+		}
+	}
 	#data{
 		background-color:#FEFEFE;
 	}
 	#strategy{
-		/**/
 	}
-	#assets,
+	#services{
+		padding-top: 0;
+		p{
+			font-size:1.4rem;
+			font-weight:500;
+			line-height:1.9rem;
+			text-align:center;
+			margin-top: .5rem;
+			margin: .5rem 1.25rem 0;
+		}
+	}
+	#asset_header{
+
+	}
+	#assets{
+		.scapt{
+			@include scapt;
+		}
+	}
 	#deliverables{
 		padding:0;
-		.scapt{
-			display: block;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: auto;
-			padding: 1% 2%;
+		.kc_single_image p{
 			margin:0;
-			background-color: $primary;
-			color:$bright_txt;
-			text-transform: uppercase;
+		}
+		.kc_row_inner{
+			margin-left:0;
+			margin-right:0;
+		}
+		.scapt{
+			@include scapt;
 		}
 		.cs-third-img{
 			img{
 				min-width:100%;
 			}
 			.scapt{
-				padding: 3% 5%;
-				bottom: 0;
-				top: 94%;
-				left: 0;
-				max-width: 80%;
-				width: 500px;
-				left: calc(50% - 250px);
+				top: 95%;
+				height:5%;
+				width: 60%;
+				left: 20%;
 			}
 		}
 		.cs-half-img{
@@ -322,7 +377,6 @@ a{
 			font-size:1.75rem;
 		}
 		.about_text{
-			font-size:0.9rem;
 		}
 	}
 }
@@ -332,7 +386,6 @@ a{
 			padding-top:2%;
 		}
 		.about_text{
-			font-size:0.8rem;
 		}
 	}
 }

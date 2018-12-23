@@ -10777,11 +10777,35 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  font-family: 'Work Sans', sans-serif; }
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  color: #000;
+  letter-spacing: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0; }
+
+h1, h2 {
+  text-align: center; }
 
 h1 {
-  font-size: .8rem;
-  text-align: center; }
+  font-size: 1.5rem;
+  line-height: 1.8rem;
+  font-weight: 900; }
+
+h2 {
+  font-size: 1.3rem;
+  font-weight: 900;
+  line-height: 1.56rem;
+  color: #5CB545;
+  margin-top: 1.3rem;
+  letter-spacing: .1rem; }
+
+div, p, li, a, input {
+  font-size: 1.7rem;
+  line-height: 2.16rem;
+  font-weight: 100; }
 
 a {
   -webkit-transition: color 1s ease-in-out;
@@ -10844,25 +10868,34 @@ a {
     display: block; }
   #nature-foot #foot-menu {
     padding: 1% 0 2%; }
+    #nature-foot #foot-menu .col {
+      max-width: 100px; }
+    #nature-foot #foot-menu a {
+      letter-spacing: default;
+      font-size: 1.2rem;
+      line-height: 2.36rem;
+      font-weight: 500; }
   #nature-foot #foot-addy {
-    color: #241F21;
+    color: #000;
     white-space: nowrap;
-    background-color: #5CB545;
-    padding: 1% 0; }
+    background-color: #5CB545; }
     #nature-foot #foot-addy p {
       margin-bottom: 0;
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      letter-spacing: .1rem;
+      font-size: 1.1rem;
+      line-height: 3.3rem;
+      font-weight: 900; }
 
-#legal-line {
+#legal-line div {
   text-align: center;
   background-color: #FFF;
   color: #5CB545;
-  padding-top: .25%;
-  padding-bottom: .25%;
-  font-size: 0.64rem;
+  line-height: 3rem;
+  font-size: 1rem;
   font-weight: 300;
-  letter-spacing: .03rem; }
+  letter-spacing: default; }
 
 #home-page .jumbotron {
   padding: 0;
@@ -10895,22 +10928,27 @@ a {
 #home-page #client-logo-img {
   max-width: 80%;
   margin: 1% auto 4% auto; }
+  #home-page #client-logo-img img {
+    margin: 0 auto;
+    display: block;
+    -webkit-transition: -webkit-filter 1s ease-in-out;
+    transition: -webkit-filter 1s ease-in-out;
+    transition: filter 1s ease-in-out;
+    transition: filter 1s ease-in-out, -webkit-filter 1s ease-in-out; }
+    #home-page #client-logo-img img:hover {
+      -webkit-filter: brightness(0) invert(1);
+              filter: brightness(0) invert(1); }
+  #home-page #client-logo-img a {
+    display: block; }
+  #home-page #client-logo-img .active img {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1); }
 
 #home-page #client-spotlight h1 {
   padding-top: 5%;
   color: #5CB545;
   padding-bottom: 2%;
-  margin-bottom: 0;
-  font-size: 0.9375rem;
-  font-weight: 600; }
-
-#client-logo-img img {
-  margin: 0 auto;
-  display: block; }
-
-#client-logo-img .active, #client-logo-img:hover {
-  -webkit-filter: brightness(0) invert(1);
-          filter: brightness(0) invert(1); }
+  margin-bottom: 0; }
 
 #nature-exp {
   color: #5CB545;
@@ -10919,15 +10957,9 @@ a {
   #nature-exp .col-md-4 {
     padding-left: 0;
     padding-right: 0; }
-  #nature-exp .home-text-title {
-    font-weight: 600;
-    font-size: 0.9375rem; }
   #nature-exp .textwidget {
     margin: 0 17%;
-    text-align: center;
-    line-height: 1.3125rem;
-    font-weight: 200;
-    font-size: 1.125rem; }
+    text-align: center; }
   #nature-exp ul {
     text-align: center;
     list-style-type: none;
@@ -10935,7 +10967,7 @@ a {
 
 #about-page .content .carousel-item {
   background: #5CB545;
-  color: #241F21;
+  color: #000;
   height: 100vh; }
 
 #about-page .content .carousel-item:nth-child(odd) {
@@ -10962,7 +10994,6 @@ a {
   content: ": "; }
 
 .about_text {
-  font-size: 1.25rem;
   max-width: 85%;
   margin-left: auto;
   margin-right: auto; }
@@ -10985,16 +11016,52 @@ a {
   font-size: 1.5rem;
   font-weight: 200; }
 
+#case-studies #brief .brief_details {
+  text-align: center; }
+
+#case-studies #brief span {
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+  font-weight: 300; }
+
 #case-studies #data {
   background-color: #FEFEFE; }
 
-#case-studies #strategy {
-  /**/ }
+#case-studies #services {
+  padding-top: 0; }
+  #case-studies #services p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.9rem;
+    text-align: center;
+    margin-top: .5rem;
+    margin: .5rem 1.25rem 0; }
 
-#case-studies #assets,
+#case-studies #assets .scapt {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  padding: 1% 2%;
+  margin: 0;
+  background-color: #4EAB36;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.4rem;
+  line-height: 1.68rem;
+  letter-spacing: .1rem;
+  float: none;
+  text-align: center; }
+
 #case-studies #deliverables {
   padding: 0; }
-  #case-studies #assets .scapt,
+  #case-studies #deliverables .kc_single_image p {
+    margin: 0; }
+  #case-studies #deliverables .kc_row_inner {
+    margin-left: 0;
+    margin-right: 0; }
   #case-studies #deliverables .scapt {
     display: block;
     position: absolute;
@@ -11005,26 +11072,24 @@ a {
     margin: 0;
     background-color: #4EAB36;
     color: #FFF;
-    text-transform: uppercase; }
-  #case-studies #assets .cs-third-img img,
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.4rem;
+    line-height: 1.68rem;
+    letter-spacing: .1rem;
+    float: none;
+    text-align: center; }
   #case-studies #deliverables .cs-third-img img {
     min-width: 100%; }
-  #case-studies #assets .cs-third-img .scapt,
   #case-studies #deliverables .cs-third-img .scapt {
-    padding: 3% 5%;
-    bottom: 0;
-    top: 94%;
-    left: 0;
-    max-width: 80%;
-    width: 500px;
-    left: calc(50% - 250px); }
-  #case-studies #assets .cs-half-img img,
+    top: 95%;
+    height: 5%;
+    width: 60%;
+    left: 20%; }
   #case-studies #deliverables .cs-half-img img {
     min-width: 100%; }
-  #case-studies #assets .cs-full-img img,
   #case-studies #deliverables .cs-full-img img {
     min-width: 100%; }
-  #case-studies #assets .media-brand,
   #case-studies #deliverables .media-brand {
     width: 60%;
     margin: 0 auto;
@@ -11048,15 +11113,11 @@ a {
       max-height: 55px;
       margin: 0 auto; }
   #about-page h2 {
-    font-size: 1.75rem; }
-  #about-page .about_text {
-    font-size: 0.9rem; } }
+    font-size: 1.75rem; } }
 
 @media (max-width: 575.98px) {
   #about-page .about_header {
-    padding-top: 2%; }
-  #about-page .about_text {
-    font-size: 0.8rem; } }
+    padding-top: 2%; } }
 
 @media (max-width: 600px) and (min-height: 480px) {
   .about_text #client-logo-img .col-4 {

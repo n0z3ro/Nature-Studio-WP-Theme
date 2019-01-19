@@ -52,8 +52,8 @@ a{
 	padding-left:0;
 }
 #foot-logo{
-	transition: filter $one_s_ease;
-	-webkit-transition : -webkit-filter $one_s_ease;
+	transition: filter $nat_trans_ease;
+	-webkit-transition : -webkit-filter $nat_trans_ease;
 	&:hover {
 		-webkit-filter: $color_filter_light;
 		filter: $color_filter_light;
@@ -83,6 +83,7 @@ a{
 	}
 }
 #nature-foot{
+	padding-top:2%;
 	background-color:$dark_bg;
 	font-size: 0.8125rem;
 	line-height: 1rem;
@@ -128,11 +129,40 @@ a{
 	font-weight:300;
 	letter-spacing: default;
 }
+@include media-breakpoint-down(sm) {
+	#nature-foot{
+		padding-top:5%;
+		#foot-addy{
+			span{
+				display:block;
+			}
+			.addy_pipe{
+				display:none;
+			}
+			p{
+				line-height:$nat_font_med;
+				padding:3% 0;
+			}
+
+		}
+	}
+}
+
+.carousel-fade{
+	.carousel-item{
+		transition-duration:$nat_trans_time;
+	}
+}
 #home-page{
 	.jumbotron{
 		padding:0;
 		margin:0;
 		width:100%;
+		.carousel-inner{
+			a{
+				color:#FFF;
+			}
+		}
 		img{
 			width:100%;
 		}
@@ -162,7 +192,7 @@ a{
 			img{
 				margin:0 auto;
 				display:block;
-				transition: filter $one_s_ease;
+				transition: filter $nat_trans_ease;
 				&:hover{
 					filter:$color_filter_light;
 				}
@@ -176,7 +206,14 @@ a{
 				}
 			}
 	}
-
+	//individual slide captions
+	#Toyota-Scion{
+		.carousel-caption{
+			a{
+				color:$green_txt;
+			}
+		}
+	}
 	#client-spotlight{
 		h1{
 			padding-top:5%;
@@ -262,6 +299,12 @@ a{
 		padding:$casestudy_padding;
 		&#full_img{
 			padding:0%;
+			.scapt{
+				@include full_scapt;
+			}
+		}
+		&.nat_dark_section{
+			background-color:$dark_bg;
 		}
 	}
 	#testimonial{
@@ -272,14 +315,41 @@ a{
 	}
 	#effects{
 	}
+	.animated_total{
+		font-size:6rem;
+		line-height:6.5rem;
+		font-weight:600;
+		text-align:center;
+		display:block;
+		margin-top:6%;
+	}
+	.impression_txt{
+		display:block;
+		color:$green_txt;
+		text-align:center;
+	}
+	.impressions_wrap{
+		width:calc(100% + 30px);
+		img{
+			filter: $color_filter_dark;
+		}
+	}
 	#brief{
 		.brief_details{
 			text-align:center;
+			width:68%;
 		}
 		span{
-			font-size:1.4rem;
-			line-height:1.4rem;
+			font-size:$nat_font_med;
+			line-height:$nat_font_med;
 			font-weight:300;
+		}
+		.brief_body_txt{
+			display:flex;
+			align-items:center;
+			h1{
+				padding-bottom:3%;
+			}
 		}
 	}
 	#data{
@@ -290,16 +360,13 @@ a{
 	#services{
 		padding-top: 0;
 		p{
-			font-size:1.4rem;
+			font-size:$nat_font_med;
 			font-weight:500;
 			line-height:1.9rem;
 			text-align:center;
 			margin-top: .5rem;
 			margin: .5rem 1.25rem 0;
 		}
-	}
-	#asset_header{
-
 	}
 	#assets{
 		.scapt{
@@ -323,10 +390,13 @@ a{
 				min-width:100%;
 			}
 			.scapt{
-				top: 95%;
-				height:5%;
+				display:flex;
+				top: calc(100% - #{$scapt_height});
+				height:$scapt_height;
 				width: 60%;
 				left: 20%;
+				align-items:center;
+				justify-content: center;
 			}
 		}
 		.cs-half-img{
@@ -346,6 +416,38 @@ a{
 			float: none;
 		}
 
+	}
+}
+@media screen and (max-width:1000px){
+#case-studies{
+	.animated_total{
+		font-size:4.5rem;
+		line-height:5rem;
+	}
+}
+}
+@media screen and (max-width:767px){
+	#case-studies #brief .brief_body_txt{
+		display:block;
+	}
+	#case-studies #brief .brief_details{
+		margin: 0 auto 32%;
+	}
+	.kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4{
+		width: 33.3333%;
+	}
+	#case-studies #assets .scapt,
+	#case-studies #deliverables .scapt,
+	#case-studies #deliverables .cs-third-img .scapt{
+		font-size:.75rem;
+		line-height:1rem;
+		height:3rem;
+		top: calc(100% - 3rem);
+	}
+}
+@media screen and (max-width:455px){
+	.kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4{
+		width: 100%;
 	}
 }
 @include media-breakpoint-down(md) {

@@ -24,7 +24,7 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 								if ( $home_content->have_posts() ) {
 									while ( $home_content->have_posts() ) {
 										$home_content->the_post();
-										echo '<div data-slide-no="'.$slide_number.'" class="carousel-item';
+										echo '<div data-slide-no="'.$slide_number.'" id="'.str_replace(" ","-",get_the_title()).'" class="carousel-item';
 										if($slide_number==0) {
 											echo ' active';
 										}

@@ -45,7 +45,17 @@ jQuery( document ).ready(function() {
     	jQuery(".myCarousel-target.active").removeClass("active");
     	jQuery(this).addClass("active");
 	});
+
+	//maps
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart1);
+
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart2);
+
 });
+
+
 
 function MouseWheelHandler() {
 	return function (e) {
@@ -76,4 +86,45 @@ function checkKey(e) {
 		jQuery('#vertCarousel').carousel('next');
 	}
 
+}
+
+jQuery(window).resize(function(){
+	drawChart1();
+	drawChart2();
+});
+function drawChart1() {
+	var data = google.visualization.arrayToDataTable([
+		['Year', 'Total Revenue'],
+		['150% (Year 1)', 150],
+		['75% (Year 2)', 262.5],
+		['125% (Year 3)', 590.625]
+	]);
+	// Set chart options
+	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } },'backgroundColor': 'transparent','tooltip' : {trigger: 'none'},colors: ['#5CB545', '#241F21'],chartArea: {  width: "50%", height: "70%" }};
+	// Instantiate and draw chart
+	var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+	chart1.draw(data, options);
+	//setTimeout(chart1.draw(data, options), 10000);
+}
+
+function drawChart2() {
+	var data = google.visualization.arrayToDataTable([
+	['Year', 'Total Circulation'],
+	['150% (Year 1)', 150],
+	['150% (Year 2)', 375],
+	['100% (Year 3)', 750]
+	]);
+	// Set chart options
+	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'backgroundColor': 'transparent',
+	'tooltip' : {
+	trigger: 'none'
+	},
+	chartArea: {  width: "50%", height: "70%" },
+	colors: ['#5CB545', '#241F21'],
+	             'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } }};
+
+	// Instantiate and draw our chart, passing in some options.
+	var chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+	//setTimeout(chart2.draw(data, options), 10000);
+	chart2.draw(data, options);
 }

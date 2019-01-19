@@ -10858,6 +10858,7 @@ a {
       border: 2px solid #FFF; }
 
 #nature-foot {
+  padding-top: 2%;
   background-color: #000;
   font-size: 0.8125rem;
   line-height: 1rem;
@@ -10897,10 +10898,27 @@ a {
   font-weight: 300;
   letter-spacing: default; }
 
+@media (max-width: 767.98px) {
+  #nature-foot {
+    padding-top: 5%; }
+    #nature-foot #foot-addy span {
+      display: block; }
+    #nature-foot #foot-addy .addy_pipe {
+      display: none; }
+    #nature-foot #foot-addy p {
+      line-height: 1.4rem;
+      padding: 3% 0; } }
+
+.carousel-fade .carousel-item {
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s; }
+
 #home-page .jumbotron {
   padding: 0;
   margin: 0;
   width: 100%; }
+  #home-page .jumbotron .carousel-inner a {
+    color: #FFF; }
   #home-page .jumbotron img {
     width: 100%; }
 
@@ -10943,6 +10961,9 @@ a {
   #home-page #client-logo-img .active img {
     -webkit-filter: brightness(0) invert(1);
             filter: brightness(0) invert(1); }
+
+#home-page #Toyota-Scion .carousel-caption a {
+  color: #5CB545; }
 
 #home-page #client-spotlight h1 {
   padding-top: 5%;
@@ -11009,6 +11030,33 @@ a {
   padding: 16%; }
   #case-studies section#full_img {
     padding: 0%; }
+    #case-studies section#full_img .scapt {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 45%;
+      width: 10%;
+      padding: 1.75% 2% 1% 2%;
+      margin: 0;
+      background-color: #241F21;
+      color: #FFF;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 1.2rem;
+      line-height: 1.68rem;
+      letter-spacing: .1rem;
+      float: none;
+      text-align: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+  #case-studies section.nat_dark_section {
+    background-color: #000; }
 
 #case-studies #testimonial {
   background-color: #000;
@@ -11016,13 +11064,43 @@ a {
   font-size: 1.5rem;
   font-weight: 200; }
 
-#case-studies #brief .brief_details {
+#case-studies .animated_total {
+  font-size: 6rem;
+  line-height: 6.5rem;
+  font-weight: 600;
+  text-align: center;
+  display: block;
+  margin-top: 6%; }
+
+#case-studies .impression_txt {
+  display: block;
+  color: #5CB545;
   text-align: center; }
+
+#case-studies .impressions_wrap {
+  width: calc(100% + 30px); }
+  #case-studies .impressions_wrap img {
+    -webkit-filter: brightness(0) invert(0);
+            filter: brightness(0) invert(0); }
+
+#case-studies #brief .brief_details {
+  text-align: center;
+  width: 68%; }
 
 #case-studies #brief span {
   font-size: 1.4rem;
   line-height: 1.4rem;
   font-weight: 300; }
+
+#case-studies #brief .brief_body_txt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #case-studies #brief .brief_body_txt h1 {
+    padding-bottom: 3%; }
 
 #case-studies #data {
   background-color: #FEFEFE; }
@@ -11038,22 +11116,30 @@ a {
     margin: .5rem 1.25rem 0; }
 
 #case-studies #assets .scapt {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
   top: 0;
   left: 0;
   width: auto;
-  padding: 1% 2%;
+  padding: 1.25% 2% 1% 2%;
   margin: 0;
   background-color: #4EAB36;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   line-height: 1.68rem;
   letter-spacing: .1rem;
   float: none;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 #case-studies #deliverables {
   padding: 0; }
@@ -11063,29 +11149,46 @@ a {
     margin-left: 0;
     margin-right: 0; }
   #case-studies #deliverables .scapt {
-    display: block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
     width: auto;
-    padding: 1% 2%;
+    padding: 1.25% 2% 1% 2%;
     margin: 0;
     background-color: #4EAB36;
     color: #FFF;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.68rem;
     letter-spacing: .1rem;
     float: none;
-    text-align: center; }
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   #case-studies #deliverables .cs-third-img img {
     min-width: 100%; }
   #case-studies #deliverables .cs-third-img .scapt {
-    top: 95%;
-    height: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: calc(100% - 5.44rem);
+    height: 5.44rem;
     width: 60%;
-    left: 20%; }
+    left: 20%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   #case-studies #deliverables .cs-half-img img {
     min-width: 100%; }
   #case-studies #deliverables .cs-full-img img {
@@ -11095,6 +11198,30 @@ a {
     margin: 0 auto;
     display: block;
     float: none; }
+
+@media screen and (max-width: 1000px) {
+  #case-studies .animated_total {
+    font-size: 4.5rem;
+    line-height: 5rem; } }
+
+@media screen and (max-width: 767px) {
+  #case-studies #brief .brief_body_txt {
+    display: block; }
+  #case-studies #brief .brief_details {
+    margin: 0 auto 32%; }
+  .kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4 {
+    width: 33.3333%; }
+  #case-studies #assets .scapt,
+  #case-studies #deliverables .scapt,
+  #case-studies #deliverables .cs-third-img .scapt {
+    font-size: .75rem;
+    line-height: 1rem;
+    height: 3rem;
+    top: calc(100% - 3rem); } }
+
+@media screen and (max-width: 455px) {
+  .kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4 {
+    width: 100%; } }
 
 @media (max-width: 991.98px) {
   #nature-exp h1 {

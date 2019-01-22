@@ -1,58 +1,100 @@
 jQuery( document ).ready(function() {
 
-	//scroll slides on swipe
-	jQuery('#vertCarousel').on('touchstart', function(event){
+	switch (true) {
 
-		var yClick = event.originalEvent.touches[0].pageY;
+		case jQuery(document.body).hasClass('page-template-home_full'):
+			console.log('home page');
+			//Home crossfade slider
+			jQuery('#crossCarousel').on('slide.bs.carousel', function (e) {
 
-		jQuery(this).on('touchmove', function(event){
-			var yMove = event.originalEvent.touches[0].pageY;
-			if( Math.floor(yClick - yMove) > 1 ){
-				jQuery('#vertCarousel').carousel('next');
+				$to_slide = jQuery(e.relatedTarget).index();
+				
+				jQuery(".crossCarousel-target.active").removeClass("active");
+				jQuery("#client-logo-img [data-slide-to=" + $to_slide + "]").addClass("active");
+			});
+
+			jQuery(".crossCarousel-target").on("mouseover", function(e) {
+				jQuery(this).addClass("active");
+				jQuery("#crossCarousel").carousel(parseInt(jQuery(this).attr("data-slide-to")));
+				jQuery(".myCarousel-target.active").removeClass("active");
+				jQuery(this).addClass("active");
+			});
+		break;
+
+		case jQuery(document.body).hasClass('page-template-work'):
+			console.log('work page');
+		break;
+
+		case jQuery(document.body).hasClass('page-template-about_full_scroll'):
+			console.log('about page');
+			//vertical slide transition on touch, mouse, or keypress
+			jQuery('#vertCarousel').on('touchstart', function(event){
+
+				var yClick = event.originalEvent.touches[0].pageY;
+
+				jQuery(this).on('touchmove', function(event){
+					var yMove = event.originalEvent.touches[0].pageY;
+					if( Math.floor(yClick - yMove) > 1 ){
+						jQuery('#vertCarousel').carousel('next');
+					}
+					else if( Math.floor(yClick - yMove) < -1 ){
+						jQuery('#vertCarousel').carousel('prev');
+					}
+				});
+
+				jQuery('#vertCarousel').on('touchend', function(){
+					jQuery(this).off('touchmove');
+				});
+			});
+			if (document.addEventListener) {
+				document.addEventListener("mousewheel", MouseWheelHandler(), false);
+				document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
+			}else{
+				sq.attachEvent("onmousewheel", MouseWheelHandler());
 			}
-			else if( Math.floor(yClick - yMove) < -1 ){
-				jQuery('#vertCarousel').carousel('prev');
-			}
-		});
+			document.onkeydown = checkKey;
+		break;
 
-		jQuery('#vertCarousel').on('touchend', function(){
-			jQuery(this).off('touchmove');
-		});
-	});
+		case jQuery(document.body).hasClass('nat_case_studies-template-media_case_study'):
+			console.log('media case study');
 
-	//scroll slides on mouse
-	if (document.addEventListener) {
-		document.addEventListener("mousewheel", MouseWheelHandler(), false);
-		document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
-	}else{
-		sq.attachEvent("onmousewheel", MouseWheelHandler());
+			var $button = jQuery('#casestudy-load-button');
+			var $casestudy_target = jQuery('#casestudy_target');
+			$i = 0;
+
+			$button.click(function() {
+
+				jQuery.ajax({
+					url: ajaxurl,
+					data: {
+						'action' : 'fetch_case_study_content',
+						'id' : ajaxpageId,
+						'cs_section' : $i
+					},
+					success:function(data) {
+						jQuery( data ).appendTo( $casestudy_target );
+					}
+				});
+				$i++;
+			});
+
+			//charts, only for bounce?
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart1);
+
+			google.charts.load('current', {'packages':['corechart']});
+			google.charts.setOnLoadCallback(drawChart2);
+			jQuery(window).resize(function(){
+				drawChart1();
+				drawChart2();
+			});
+		break;
+		// case case study 2
+		// case case study 3
+		case jQuery(document.body).hasClass('page-template-empty'):
+			console.log('empty/blank page');
+		break;
 	}
-	//scroll slides on key press
-	document.onkeydown = checkKey;
-
-	//Home crossfade slider
-	jQuery('#crossCarousel').on('slide.bs.carousel', function (e) {
-
-		$to_slide = jQuery(e.relatedTarget).index();
-		
-		jQuery(".crossCarousel-target.active").removeClass("active");
-		jQuery("#client-logo-img [data-slide-to=" + $to_slide + "]").addClass("active");
-	});
-
-	jQuery(".crossCarousel-target").on("mouseover", function(e) {
-		jQuery(this).addClass("active");
-		jQuery("#crossCarousel").carousel(parseInt(jQuery(this).attr("data-slide-to")));
-    	jQuery(".myCarousel-target.active").removeClass("active");
-    	jQuery(this).addClass("active");
-	});
-
-	//maps
-	google.charts.load('current', {'packages':['corechart']});
-	google.charts.setOnLoadCallback(drawChart1);
-
-	google.charts.load('current', {'packages':['corechart']});
-	google.charts.setOnLoadCallback(drawChart2);
-
 });
 
 
@@ -88,10 +130,8 @@ function checkKey(e) {
 
 }
 
-jQuery(window).resize(function(){
-	drawChart1();
-	drawChart2();
-});
+
+
 function drawChart1() {
 	var data = google.visualization.arrayToDataTable([
 		['Year', 'Total Revenue'],
@@ -104,7 +144,7 @@ function drawChart1() {
 	// Instantiate and draw chart
 	var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 	chart1.draw(data, options);
-	//setTimeout(chart1.draw(data, options), 10000);
+
 }
 
 function drawChart2() {
@@ -115,16 +155,9 @@ function drawChart2() {
 	['100% (Year 3)', 750]
 	]);
 	// Set chart options
-	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'backgroundColor': 'transparent',
-	'tooltip' : {
-	trigger: 'none'
-	},
-	chartArea: {  width: "50%", height: "70%" },
-	colors: ['#5CB545', '#241F21'],
-	             'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } }};
+	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'backgroundColor': 'transparent','tooltip' : {trigger: 'none'},chartArea: {  width: "50%", height: "70%" },colors: ['#5CB545', '#241F21'],'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } }};
 
-	// Instantiate and draw our chart, passing in some options.
 	var chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
-	//setTimeout(chart2.draw(data, options), 10000);
+
 	chart2.draw(data, options);
 }

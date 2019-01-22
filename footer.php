@@ -13,12 +13,16 @@
 
 <?php
 
-if (is_page_template('page-templates/media_case_study.php')) { 
-
-    get_template_part( 'page-templates/partials/content', 'casestudiesfooter' );
+if (is_page_template('page-templates/media_case_study.php')) {
+	get_template_part( 'page-templates/partials/content', 'casestudiesfooter' );
 }
- get_template_part( 'page-templates/partials/content', 'footer' );
- ?>
+
+if (is_page_template('page-templates/about_full_scroll.php')) {
+	//footer loaded as final slide on about page
+}else{
+	get_template_part( 'page-templates/partials/content', 'footer' );
+}
+?>
 
 <?php wp_footer(); ?>
 </body>

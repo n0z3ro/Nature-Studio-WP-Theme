@@ -105,8 +105,8 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 									$about_content->the_post();
 									$about_text = get_the_content(); 
 									echo '<div class="carousel-item"><div class="fill">';
-									echo '<h1 class="about_header">'. get_the_title() . '</h1>';
-									echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
+									echo '<h1 class="about_header">'. esc_html(get_the_title()) . '</h1>';
+									echo '<div class="about_text">'. strip_tags($about_text, '<img><h2><div>') .'</div>';
 									echo '</div></div>';
 								}
 								wp_reset_postdata();
@@ -118,10 +118,12 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 							<div class="fill">
 								<div class="container-fluid team-images">
 									<div class="row">
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" alt="Nik"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" alt="Tamika"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" alt="John"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" alt="Clint"/></div>
+										<div class="col-sm-4"><h2>TEAM<h2></div>
+										<div class="col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" alt="Nik"/></div>
+										<div class="col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" alt="John"/></div>
+										<div class="col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" alt="Tamika"/></div>
+										<div class="col-sm-4"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" alt="Clint"/></div>
+										<div class="col-sm-4"><h2>LIKE US?</h2><span>Cool! Hit us up. We’re always looking for truly talented people to join our crew.</span></div>
 									</div>
 								</div>
 

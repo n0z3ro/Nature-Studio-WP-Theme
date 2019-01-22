@@ -78,3 +78,28 @@ add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
 function myplugin_remove_type_attr($tag, $handle) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
+
+function fetch_case_study_content() {
+	if ( isset($_REQUEST) ) {
+		$post_id = $_REQUEST['id'];
+		$section_number = $_REQUEST['cs_section'];
+		$posts = get_posts( array(
+			'post_type' => 'nat_case_studies',
+			'post__in' => array($post_id)
+		));
+
+		foreach($posts as $post){
+
+			$content = $post->post_content;
+
+			$content_slice = explode("</section>", $content);
+			
+			echo $content_slice[$section_number];
+
+		}
+
+	}
+	die();
+}
+add_action( 'wp_ajax_fetch_case_study_content', 'fetch_case_study_content' );
+add_action( 'wp_ajax_nopriv_fetch_case_study_content', 'fetch_case_study_content' );

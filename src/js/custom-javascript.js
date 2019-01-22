@@ -60,7 +60,7 @@ jQuery( document ).ready(function() {
 
 			var $button = jQuery('#casestudy-load-button');
 			var $casestudy_target = jQuery('#casestudy_target');
-			$i = 0;
+			$section_number = 0;
 
 			$button.click(function() {
 
@@ -69,21 +69,38 @@ jQuery( document ).ready(function() {
 					data: {
 						'action' : 'fetch_case_study_content',
 						'id' : ajaxpageId,
-						'cs_section' : $i
+						'cs_section' : $section_number
 					},
 					success:function(data) {
-						jQuery( data ).appendTo( $casestudy_target );
+						$new_section = jQuery(data);
+						//jQuery('section').appendTo($casestudy_target);
+						$casestudy_target.append( '<span id="loading_screen"></span>' );
+						jQuery('#loading_screen').html($new_section);
+						jQuery($new_section).hide();
+						jQuery('html, body').animate({
+    scrollTop: jQuery("#loading_screen").offset().top
+}, 1000);
+
+						setTimeout(section_load_animate, 500);
+						
+						//jQuery('#loading_screen section').addClass('new_section');
+						setTimeout(unwrap_function, 3000);
+						//setTimeout(jQuery($new_section).unwrap(), 3000);
+						//jQuery( data ).appendTo( $casestudy_target );
+						//jQuery(data).animateTo('appendTo', $casestudy_target );
+						//jQuery(data).animateAppendTo($casestudy_target, 1000);
+						//($casestudy_target 'img').fadeIn(1000);
 					}
 				});
-				$i++;
+				$section_number++;
 			});
 
 			//charts, only for bounce?
 			google.charts.load('current', {'packages':['corechart']});
-			google.charts.setOnLoadCallback(drawChart1);
+			//google.charts.setOnLoadCallback(drawChart1);
 
 			google.charts.load('current', {'packages':['corechart']});
-			google.charts.setOnLoadCallback(drawChart2);
+			//google.charts.setOnLoadCallback(drawChart2);
 			jQuery(window).resize(function(){
 				drawChart1();
 				drawChart2();
@@ -96,8 +113,14 @@ jQuery( document ).ready(function() {
 		break;
 	}
 });
-
-
+function section_load_animate(){
+//jQuery($new_section).show(800);
+jQuery($new_section).fadeIn(800);
+}
+function unwrap_function(){
+	jQuery('#loading_screen section').unwrap();
+	//console.log('unwrap');
+};
 
 function MouseWheelHandler() {
 	return function (e) {
@@ -161,3 +184,16 @@ function drawChart2() {
 
 	chart2.draw(data, options);
 }
+
+//animate transitions
+jQuery.fn.animateAppendTo = function(sel, speed) {
+    var $this = this,
+        newEle = $this.clone(true).appendTo(sel),
+        newPos = newEle.position();
+    newEle.hide();
+    $this.css('position', 'absolute').animate(newPos, speed, function() {
+        newEle.show();
+        $this.remove();
+    });
+    return newEle;
+};

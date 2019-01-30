@@ -11027,7 +11027,7 @@ a {
 
 #case-studies section {
   background-color: #FFF;
-  padding: 16%; }
+  padding: 10%; }
   #case-studies section#full_img {
     padding: 0%; }
     #case-studies section#full_img .scapt {
@@ -11036,16 +11036,18 @@ a {
       display: flex;
       position: absolute;
       top: 0;
-      left: 45%;
-      width: 10%;
-      padding: 1.75% 2% 1% 2%;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      width: auto;
+      padding: 1.7rem;
       margin: 0;
       background-color: #241F21;
       color: #FFF;
       text-transform: uppercase;
       font-weight: 900;
-      font-size: 1.2rem;
-      line-height: 1.68rem;
+      font-size: 1.7rem;
+      line-height: 2.04rem;
       letter-spacing: .1rem;
       float: none;
       text-align: center;
@@ -11057,6 +11059,12 @@ a {
               justify-content: center; }
   #case-studies section.nat_dark_section {
     background-color: #000; }
+
+#case-studies h1 {
+  padding-bottom: 1.8rem; }
+
+#case-studies p {
+  font-size: 1.8rem; }
 
 #case-studies #testimonial {
   background-color: #000;
@@ -11086,11 +11094,25 @@ a {
 #case-studies #brief .brief_details {
   text-align: center;
   width: 68%; }
-
-#case-studies #brief span {
-  font-size: 1.4rem;
-  line-height: 1.4rem;
-  font-weight: 300; }
+  #case-studies #brief .brief_details h2 {
+    margin-top: 1.56rem;
+    line-height: 1rem; }
+    #case-studies #brief .brief_details h2:first-of-type {
+      margin-top: 0; }
+  #case-studies #brief .brief_details ul {
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+    padding-top: .28rem;
+    padding-bottom: .35rem; }
+    #case-studies #brief .brief_details ul li {
+      font-size: 1.4rem;
+      line-height: 1.68rem;
+      font-weight: 300; }
+  #case-studies #brief .brief_details span {
+    font-size: 1.4rem;
+    line-height: 1.68rem;
+    font-weight: 300; }
 
 #case-studies #brief .brief_body_txt {
   display: -webkit-box;
@@ -11099,21 +11121,24 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center; }
-  #case-studies #brief .brief_body_txt h1 {
-    padding-bottom: 3%; }
 
 #case-studies #data {
   background-color: #FEFEFE; }
 
 #case-studies #services {
   padding-top: 0; }
+  #case-studies #services h2 {
+    margin-top: 0; }
   #case-studies #services p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.9rem;
     text-align: center;
     margin-top: .5rem;
     margin: .5rem 1.25rem 0; }
+
+#case-studies #asset_header h1 {
+  padding-bottom: 0; }
 
 #case-studies #assets .scapt {
   display: -webkit-box;
@@ -11123,14 +11148,13 @@ a {
   top: 0;
   left: 0;
   width: auto;
-  padding: 1.25% 2% 1% 2%;
+  padding: 1.2rem;
   margin: 0;
   background-color: #4EAB36;
   color: #FFF;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 1.2rem;
-  line-height: 1.68rem;
+  font-size: 1.4rem;
   letter-spacing: .1rem;
   float: none;
   text-align: center;
@@ -11156,14 +11180,13 @@ a {
     top: 0;
     left: 0;
     width: auto;
-    padding: 1.25% 2% 1% 2%;
+    padding: 1.2rem;
     margin: 0;
     background-color: #4EAB36;
     color: #FFF;
     text-transform: uppercase;
     font-weight: 900;
-    font-size: 1.2rem;
-    line-height: 1.68rem;
+    font-size: 1.4rem;
     letter-spacing: .1rem;
     float: none;
     text-align: center;

@@ -13,6 +13,9 @@
 $root_font: 10px; //set for rem conversions
 $nat_font_sm: 1.2rem;
 $nat_font_med: 1.4rem;
+$nat_font_lg: 1.5rem;
+$nat_font_line_height: 1.8rem;
+$nat_font_case_study: 1.8rem;
 $scapt_line_height: 1.36rem;
 $scapt_height: $scapt_line_height * 4;
 
@@ -42,7 +45,7 @@ $footer_height: 17%;
 // Case Studies Dimensions
 //
 
-$casestudy_padding: 16%;
+$casestudy_padding: 10%;
 
 //
 // Transitions
@@ -61,14 +64,14 @@ $color_filter_dark: brightness(0) invert(0);
 	top: 0;
 	left: 0;
 	width: auto;
-	padding: 1.25% 2% 1% 2%;
+	padding:1.2rem;
 	margin:0;
 	background-color: $primary;
 	color:$bright_txt;
 	text-transform: uppercase;
 	font-weight:900;
-	font-size:$nat_font_sm;
-	line-height:1.68rem;
+	font-size:$nat_font_med;
+	//line-height:1.68rem;
 	letter-spacing: .1rem;
 	float:none;
 	text-align:center;
@@ -80,16 +83,17 @@ $color_filter_dark: brightness(0) invert(0);
 	display: flex;
 	position: absolute;
 	top: 0;
-	left: 45%;
-	width: 10%;
-	padding: 1.75% 2% 1% 2%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: auto;
+	padding: 1.7rem;
 	margin:0;
 	background-color: $gray_bg;
 	color:$bright_txt;
 	text-transform: uppercase;
 	font-weight:900;
-	font-size:$nat_font_sm;
-	line-height:1.68rem;
+	font-size:1.7rem;
+	line-height:2.04rem;
 	letter-spacing: .1rem;
 	float:none;
 	text-align:center;

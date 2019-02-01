@@ -64,7 +64,7 @@ a{
 	color:$green_txt;
 	background-color:$dark_bg;
 	text-align:center;
-	padding-top:6%;
+	padding-top:0;
 	padding-bottom:6%;
 	a{
 		font-size:18px;
@@ -315,11 +315,27 @@ a{
 	}
 	#testimonial{
 		background-color:$dark_bg;
-		color: #41AD49;
-		font-size: 1.5rem;
-		font-weight: 200;
+		p{
+			color: #41AD49;
+			font-size: 2.5rem;
+			line-height: 3rem;
+			font-weight: 200;
+		}
+		h4{
+			//
+			font-size: 1.8rem;
+			line-height: 5.4rem;
+		}
 	}
 	#effects{
+		padding-bottom:2%;
+	}
+	#effects_graphs{
+		padding-top:2%;
+		padding-bottom:2%;
+	}
+	#effects_captions{
+		padding-top:2%;
 	}
 	.animated_total{
 		font-size:6rem;
@@ -418,18 +434,23 @@ a{
 			@include scapt;
 		}
 		.cs-third-img{
+			flex-direction: row;
+			flex-wrap: wrap;
 			img{
 				min-width:100%;
 			}
 			.scapt{
-				display:flex;
-				top: calc(100% - #{$scapt_height});
-				height:$scapt_height;
-				width: 60%;
-				left: 20%;
-				align-items:center;
-				justify-content: center;
+				@include one_third_scapt;
 			}
+			/*
+			&.long-scapt{
+				.scapt{
+					width: 74%;
+					left: 18%;
+					transform: translate(-6%, -100%);
+				}
+			}
+			*/
 		}
 		.cs-half-img{
 			img{
@@ -450,6 +471,12 @@ a{
 
 	}
 }
+@media screen and (max-width:1255px){
+	#case-studies #deliverables .cs-third-img .scapt{
+		font-size:1rem;
+		line-height:1.2rem;
+	}
+}
 @media screen and (max-width:1000px){
 #case-studies{
 	.animated_total{
@@ -468,6 +495,7 @@ a{
 	.kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4{
 		width: 33.3333%;
 	}
+	/*
 	#case-studies #assets .scapt,
 	#case-studies #deliverables .scapt,
 	#case-studies #deliverables .cs-third-img .scapt{
@@ -476,6 +504,7 @@ a{
 		height:3rem;
 		top: calc(100% - 3rem);
 	}
+	*/
 }
 @media screen and (max-width:455px){
 	.kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4{

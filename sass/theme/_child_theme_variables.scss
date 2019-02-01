@@ -16,8 +16,6 @@ $nat_font_med: 1.4rem;
 $nat_font_lg: 1.5rem;
 $nat_font_line_height: 1.8rem;
 $nat_font_case_study: 1.8rem;
-$scapt_line_height: 1.36rem;
-$scapt_height: $scapt_line_height * 4;
 
 //
 // Color system
@@ -59,19 +57,16 @@ $color_filter_dark: brightness(0) invert(0);
 // Case Studies
 //
 @mixin scapt {
-	display: flex;
-	position: absolute;
+	@include scapt_font_settings;
 	top: 0;
 	left: 0;
-	width: auto;
-	padding:1.2rem;
+	padding:0.7rem 1.2rem 0.5rem;
 	margin:0;
 	background-color: $primary;
 	color:$bright_txt;
 	text-transform: uppercase;
 	font-weight:900;
-	font-size:$nat_font_med;
-	//line-height:1.68rem;
+	font-size:$nat_font_sm;
 	letter-spacing: .1rem;
 	float:none;
 	text-align:center;
@@ -80,12 +75,10 @@ $color_filter_dark: brightness(0) invert(0);
 }
 
 @mixin full_scapt{
-	display: flex;
-	position: absolute;
+	@include scapt_font_settings;
 	top: 0;
 	left: 50%;
 	transform: translateX(-50%);
-	width: auto;
 	padding: 1.7rem;
 	margin:0;
 	background-color: $gray_bg;
@@ -95,6 +88,38 @@ $color_filter_dark: brightness(0) invert(0);
 	font-size:1.7rem;
 	line-height:2.04rem;
 	letter-spacing: .1rem;
+}
+
+@mixin one_third_scapt{
+	@include scapt_font_settings;
+	/*
+	left: 50%;
+	transform: translate(-50%, -100%);
+	height:auto;
+	top:100%;
+	width:60%;
+	*/
+	top: 100%;
+	transform: translateY(-100%);
+	left: 0;
+	padding:0.7rem 1.2rem 0.5rem;
+	margin:0;
+	background-color: $primary;
+	color:$bright_txt;
+	text-transform: uppercase;
+	font-weight:900;
+	font-size:$nat_font_sm;
+	letter-spacing: .1rem;
+	float:none;
+	text-align:center;
+	align-items:center;
+	justify-content: center;
+}
+
+@mixin scapt_font_settings{
+	display: flex;
+	position: absolute;
+	width: auto;
 	float:none;
 	text-align:center;
 	align-items:center;

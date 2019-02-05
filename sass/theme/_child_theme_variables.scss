@@ -85,20 +85,10 @@ $color_filter_dark: brightness(0) invert(0);
 	color:$bright_txt;
 	text-transform: uppercase;
 	font-weight:900;
-	font-size:1.7rem;
-	line-height:2.04rem;
-	letter-spacing: .1rem;
 }
 
 @mixin one_third_scapt{
 	@include scapt_font_settings;
-	/*
-	left: 50%;
-	transform: translate(-50%, -100%);
-	height:auto;
-	top:100%;
-	width:60%;
-	*/
 	top: 100%;
 	transform: translateY(-100%);
 	left: 0;

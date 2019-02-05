@@ -3968,10 +3968,10 @@ jQuery( document ).ready(function() {
 		jQuery(this).on('touchmove', function(event){
 			var yMove = event.originalEvent.touches[0].pageY;
 			if( Math.floor(yClick - yMove) > 1 ){
-				jQuery('#vertCarousel').carousel('next');
+				vert_carousel_down();
 			}
 			else if( Math.floor(yClick - yMove) < -1 ){
-				jQuery('#vertCarousel').carousel('prev');
+				vert_carousel_up();
 			}
 		});
 
@@ -4015,19 +4015,18 @@ jQuery( document ).ready(function() {
 
 });
 
-
-
 function MouseWheelHandler() {
 	return function (e) {
 
 	var e = window.event || e;
 	var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
 
-	//scrolling down
 	if (delta < 0) {
-		jQuery('#vertCarousel').carousel('next');
+		// scrolling down
+		vert_carousel_down();
 	}else{
-		jQuery('#vertCarousel').carousel('prev');
+		// scrolling up
+		vert_carousel_up();
 	}
 		return false;
 	}
@@ -4037,17 +4036,37 @@ function checkKey(e) {
 
 	e = e || window.event;
 
-	if (e.keyCode == '38') {
-		// up arrow
-		jQuery('#vertCarousel').carousel('prev');
-	}
-	else if (e.keyCode == '40') {
+	if (e.keyCode == '40') {
 		// down arrow
-		jQuery('#vertCarousel').carousel('next');
+		vert_carousel_down();
+	}
+	else if (e.keyCode == '38') {
+		// up arrow
+		vert_carousel_up();
 	}
 
 }
+function vert_carousel_up(){
+	jQuery('#vertCarousel').carousel('prev');
+}
+function vert_carousel_down(){
+	var penultimate_slide = document.getElementById('penultimate-slide');
+	var footer_row = document.getElementById('about-footer-row');
 
+	if (penultimate_slide.classList.contains('active')) {
+		jQuery(footer_row).fadeIn( "fast" );
+		jQuery('#about-page .team-images').animate({top:'-30vh'});
+	}else{
+		jQuery('#vertCarousel').carousel('next');
+	}
+}
+jQuery('#vertCarousel').on('slide.bs.carousel', function () {
+	var footer_row = document.getElementById('about-footer-row');
+	if ( jQuery(footer_row).is(':visible') ){
+		jQuery(footer_row).fadeOut( "fast" );
+	}
+	jQuery('#about-page .team-images').animate({top:'0'});
+});
 jQuery(window).resize(function(){
 	drawChart1();
 	drawChart2();
@@ -4060,7 +4079,7 @@ function drawChart1() {
 		['125% (Year 3)', 590.625]
 	]);
 	// Set chart options
-	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } },'backgroundColor': 'transparent','tooltip' : {trigger: 'none'},colors: ['#5CB545', '#241F21'],chartArea: {  width: "50%", height: "70%" }};
+	var options = {'legend':'none',hAxis : {baselineColor: '#fff',gridlineColor: '#fff','textStyle' : {'fontSize': 1,'color':'#FFF'}},'vAxis': {baselineColor: '#fff',gridlineColor: '#fff','gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1,'color':'#FFF' } },'backgroundColor': 'transparent','tooltip' : {trigger: 'none'},colors: ['#5CB545', '#241F21'],chartArea: {  width: "75%", height: "75%" }};
 	// Instantiate and draw chart
 	var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div'));
 	chart1.draw(data, options);
@@ -4075,13 +4094,13 @@ function drawChart2() {
 	['100% (Year 3)', 750]
 	]);
 	// Set chart options
-	var options = {hAxis : {'textStyle' : {'fontSize': 8}},'backgroundColor': 'transparent',
+	var options = {'legend':'none',hAxis : {'textStyle' : {'fontSize': 1,'color':'#FFF'}},'backgroundColor': 'transparent',
 	'tooltip' : {
 	trigger: 'none'
 	},
-	chartArea: {  width: "50%", height: "70%" },
+	chartArea: {  width: "75%", height: "75%" },
 	colors: ['#5CB545', '#241F21'],
-	             'vAxis': {'gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1 } }};
+	             'vAxis': {baselineColor: '#fff',gridlineColor: '#fff','gridlines': { count: 0 }, 'textStyle': { 'fontSize': 1,'color':'#FFF' } }};
 
 	// Instantiate and draw our chart, passing in some options.
 	var chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));

@@ -14,7 +14,7 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 <div id="about-page" class="container-fluid">
 	<div class="content row">
 		<section class="slide-wrapper">
-			<div class="container-fluid">
+			<div id="slide-container-fluid" class="container-fluid no-gutters">
 				<div id="vertCarousel" class="carousel vert slide" data-ride="carousel" data-interval="false" data-wrap="false">
 					<!-- Indicators -->
 					<ol class="carousel-indicators">
@@ -47,6 +47,9 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 												<div class="container-fluid">
 													<div id="client-logo-img" class="row">
 														<div class="col-4 col-sm-4 col-md-2">
+															<img id="logo-zo" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_ZenithOptimedia.png' ?>" alt="Zenith Optimedia"/>
+														</div>
+														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-scion" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Scion.png' ?>" alt="Scion" />
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
@@ -56,13 +59,13 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 															<img id="logo-pepsi" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Pepsi.png' ?>" alt="Pepsi"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
+															<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" alt="Mountain Dew"/>
+														</div>
+														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-nike" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Nike.png' ?>" alt="Nike"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-ea" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_EASports.png' ?>" alt="EA Sports"/>
-														</div>
-														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-md" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_MountainDew.png' ?>" alt="Mountain Dew"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-bounce" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Bounce.png' ?>" alt="Bounce"/>
@@ -79,11 +82,8 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-shure" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Shure.png' ?>" alt="Shure"/>
 														</div>
-														<div class="col-4 col-sm-4 col-md-2">
-															<img id="logo-stanton" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Stanton.png' ?>" alt="Stanton"/>
-														</div>
 														<div class="col-4 col-sm-4 col-md-2 offset-md-6">
-															<img id="logo-zo" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_ZenithOptimedia.png' ?>" alt="Zenith Optimedia"/>
+															<img id="logo-stanton" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Stanton.png' ?>" alt="Stanton"/>
 														</div>
 														<div class="col-4 col-sm-4 col-md-2">
 															<img id="logo-tablist" src="<?php echo get_stylesheet_directory_uri() . '/img/Logo_Tablist.png' ?>" alt="Tablist"/>
@@ -103,44 +103,126 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 							if ( $about_content->have_posts() ) {
 								while ( $about_content->have_posts() ) {
 									$about_content->the_post();
-									$about_text = get_the_content(); 
-									echo '<div class="carousel-item"><div class="fill">';
-									echo '<h1 class="about_header">'. get_the_title() . '</h1>';
-									echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
-									echo '</div></div>';
+									$about_text = get_the_content();
+									$about_slug = get_post_field( 'post_name', get_post() );
+									//echo $about_slug;
+									if($about_slug <> 'services'){
+										echo '<div class="carousel-item"><div class="fill">';
+										echo '<h1 class="about_header">'. get_the_title() . '</h1>';
+										echo '<div class="about_text">'. strip_tags($about_text, '<img><h2>') .'</div>';
+										echo '</div></div>';
+									}else{
+										echo '<div class="carousel-item"><div class="fill">';
+										?>
+										<div id="about_services_wrap">
+											<h1 class="about_header">SERVICES</h1>
+											<div class="row no-gutters">
+												<div class="col-sm-3">
+													<div class="services_section services_first">
+														<h2 class="services_header">RESEARCH</h2>
+														<span>
+															Our processes begin and end in research. Learning is central to our company’s culture it sparks our imagination. Interpreting data is crucial for developing your product or company. Let's explore the best potential for your brand, content, product business or company.
+														</span>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="services_section">
+														<h2 class="services_header">BUSINESS, PRODUCT <br>OR BRAND DEVELOPMENT</h2>
+														<span>
+															Once our preliminary work is done, it’s time to plan for growth. Our imagination and skills are our alchemizing ingredient and is our company’s most fruitful and desired service. Let's devise the best innovations for your product, company or brand to thrive in a selected market environment. 
+														</span>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="services_section">
+														<h2 class="services_header">CREATIVE SERVICES &amp; PRODUCTION</h2>
+														<span>
+															From concept to completion we have the network and know the ins and outs of the creative processes involved with producing on-point assets and deliverables in all forms of media on time, on budget. Let's design the best ways for your content to obtain customers.
+														</span>
+													</div>
+												</div>
+												<div class="col-sm-3">
+													<div class="services_section services_last">
+														<h2 class="services_header">CONSULTING &amp; MANAGEMENT</h2>
+														<span>
+															Our clients are our partners. Our agency is fully capable to operate autonomously as our client's creative department. Nature fills in the blanks left out by our client’s abilities.
+														</span>
+													</div>
+												</div>
+											</div>
+											<!--
+											<div class="row row-2 no-gutters">
+
+												<div class="col-sm-4">
+													<div class="services_section">
+														
+													</div>
+												</div>
+											</div>
+											-->
+										</div>
+										<?php
+										echo '</div></div>';
+									}
 								}
 								wp_reset_postdata();
 							} else {
 								echo 'no content matches about-content category';
 							}
 						?>
-						<div class="carousel-item">
+						<div id="penultimate-slide" class="carousel-item">
 							<div class="fill">
 								<div class="container-fluid team-images">
-									<div class="row">
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" alt="Nik"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" alt="Tamika"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" alt="John"/></div>
-										<div class="col"><img src="<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" alt="Clint"/></div>
+									<div class="row no-gutters">
+										<div class="col-sm-4">
+											<div class="team_section">
+												<h2 class="services_header">TEAM</h2>
+											</div>
+										</div>
+										<div class="col-sm-4" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>');">
+											<!-- <h2 class="services_header">Nik</h2> -->
+											<!--<img class="team-img" src="<?php //echo get_stylesheet_directory_uri() . '/img/Portrait_1.jpg' ?>" alt="Nik"/> -->
+										</div>
+										<div class="col-sm-4" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>');">
+											<!-- <h2 class="services_header">Kenny</h2> -->
+											<!--<img class="team-img" src="<?php //echo get_stylesheet_directory_uri() . '/img/Portrait_2.jpg' ?>" alt="Kenny"/>-->
+										</div>
+									</div>
+									<div class="row no-gutters">
+										<div class="col-sm-4" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>');">
+											<!-- <h2 class="services_header">Tamika</h2> -->
+											<!--<img class="team-img" src="<?php //echo get_stylesheet_directory_uri() . '/img/Portrait_3.jpg' ?>" alt="Tamika"/>-->
+										</div>
+										<div class="col-sm-4" style="background-image:url('<?php echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>');">
+											<!--  <h2 class="services_header">Clint</h2> -->
+											<!--<img class="team-img" src="<?php //echo get_stylesheet_directory_uri() . '/img/Portrait_4.jpg' ?>" alt="Clint"/>-->
+										</div>
+										<div class="col-sm-4">
+											<div class="services_section">
+												<h2 class="services_header">LIKE US?</h2>
+												<span>
+													Cool!  <a href="#about">Hit us up.</a> We're always looking for truly talented people to join our crew.
+												</span>
+											</div>
+										</div>
 									</div>
 								</div>
-
-								<?php /*wrap footer content in slider*/ get_template_part( 'page-templates/partials/content', 'footer' ); ?>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
+				<div id="about-footer-row">
+					<?php get_template_part( 'page-templates/partials/content', 'footer' ); ?>
+				</div>
+
+		</div>
 	</div>
 </div>
 
 <?php /*
-
-		
-
-
 </div>
-
 */?>
 <?php get_footer(); ?>

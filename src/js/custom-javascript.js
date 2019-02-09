@@ -22,11 +22,12 @@ jQuery( document ).ready(function() {
 
 	//scroll slides on mouse
 	if (document.addEventListener) {
-		document.addEventListener("mousewheel", MouseWheelHandler(), false);
-		document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
+		document.addEventListener("wheel", MouseWheelHandler(), false);
+		//document.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
 	}else{
 		sq.attachEvent("onmousewheel", MouseWheelHandler());
 	}
+	
 	//scroll slides on key press
 	document.onkeydown = checkKey;
 
@@ -46,27 +47,28 @@ jQuery( document ).ready(function() {
     	jQuery(this).addClass("active");
 	});
 
-	//maps
-	google.charts.load('current', {'packages':['corechart']});
-	google.charts.setOnLoadCallback(drawChart1);
+	if( jQuery('#effects_graphs').length ) {
+		//load maps if needed
+		//bounce maps
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart1);
 
-	google.charts.load('current', {'packages':['corechart']});
-	google.charts.setOnLoadCallback(drawChart2);
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart2);
+	}
 
 });
 
 function MouseWheelHandler() {
 	return function (e) {
 
-	var e = window.event || e;
-	var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-
-	if (delta < 0) {
-		// scrolling down
-		vert_carousel_down();
-	}else{
-		// scrolling up
-		vert_carousel_up();
+	if (e.deltaY < 0) {
+	//scrolling up
+	vert_carousel_up();
+	}
+	if (e.deltaY > 0) {
+	//scrolling down
+	vert_carousel_down();
 	}
 		return false;
 	}

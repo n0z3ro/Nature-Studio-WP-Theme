@@ -119,47 +119,33 @@ $about_content = new WP_Query( array( 'category_name' => 'about-content' ) );
 											<div class="row no-gutters">
 												<div class="col-sm-3">
 													<div class="services_section services_first">
-														<h2 class="services_header">RESEARCH</h2>
-														<span>
-															Our processes begin and end in research. Learning is central to our company’s culture it sparks our imagination. Interpreting data is crucial for developing your product or company. Let's explore the best potential for your brand, content, product business or company.
-														</span>
+														<?php if( is_active_sidebar( 'services-1' ) ) : ?>
+															<?php dynamic_sidebar( 'services-1' ); ?>
+														<?php endif; ?>
 													</div>
 												</div>
 												<div class="col-sm-3">
 													<div class="services_section">
-														<h2 class="services_header">BUSINESS, PRODUCT <br>OR BRAND DEVELOPMENT</h2>
-														<span>
-															Once our preliminary work is done, it’s time to plan for growth. Our imagination and skills are our alchemizing ingredient and is our company’s most fruitful and desired service. Let's devise the best innovations for your product, company or brand to thrive in a selected market environment. 
-														</span>
+														<?php if( is_active_sidebar( 'services-2' ) ) : ?>
+															<?php dynamic_sidebar( 'services-2' ); ?>
+														<?php endif; ?>
 													</div>
 												</div>
 												<div class="col-sm-3">
 													<div class="services_section">
-														<h2 class="services_header">CREATIVE SERVICES &amp; PRODUCTION</h2>
-														<span>
-															From concept to completion we have the network and know the ins and outs of the creative processes involved with producing on-point assets and deliverables in all forms of media on time, on budget. Let's design the best ways for your content to obtain customers.
-														</span>
+														<?php if( is_active_sidebar( 'services-3' ) ) : ?>
+															<?php dynamic_sidebar( 'services-3' ); ?>
+														<?php endif; ?>
 													</div>
 												</div>
 												<div class="col-sm-3">
 													<div class="services_section services_last">
-														<h2 class="services_header">CONSULTING &amp; MANAGEMENT</h2>
-														<span>
-															Our clients are our partners. Our agency is fully capable to operate autonomously as our client's creative department. Nature fills in the blanks left out by our client’s abilities.
-														</span>
+														<?php if( is_active_sidebar( 'services-4' ) ) : ?>
+															<?php dynamic_sidebar( 'services-4' ); ?>
+														<?php endif; ?>
 													</div>
 												</div>
 											</div>
-											<!--
-											<div class="row row-2 no-gutters">
-
-												<div class="col-sm-4">
-													<div class="services_section">
-														
-													</div>
-												</div>
-											</div>
-											-->
 										</div>
 										<?php
 										echo '</div></div>';

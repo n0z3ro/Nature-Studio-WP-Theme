@@ -62,6 +62,38 @@ function nat_register_widgets() {
 		'before_title' => '<h1 class="home-text-title">',
 		'after_title' => '</h1>'
 	));
+	register_sidebar( array(
+		'name' => __( 'Services 1', 'nat' ),
+		'id' => 'services-1',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="services_header">',
+		'after_title' => '</h2>'
+	));
+	register_sidebar( array(
+		'name' => __( 'Services 2', 'nat' ),
+		'id' => 'services-2',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="services_header">',
+		'after_title' => '</h2>'
+	));
+	register_sidebar( array(
+		'name' => __( 'Services 3', 'nat' ),
+		'id' => 'services-3',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="services_header">',
+		'after_title' => '</h2>'
+	));
+	register_sidebar( array(
+		'name' => __( 'Services 4', 'nat' ),
+		'id' => 'services-4',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class="services_header">',
+		'after_title' => '</h2>'
+	));
 	//remove parent widgets
 	unregister_sidebar( 'right-sidebar' );
 	unregister_sidebar( 'left-sidebar' );
@@ -78,3 +110,9 @@ add_filter('script_loader_tag', 'myplugin_remove_type_attr', 10, 2);
 function myplugin_remove_type_attr($tag, $handle) {
     return preg_replace( "/type=['\"]text\/(javascript|css)['\"]/", '', $tag );
 }
+
+function line_br_widget_title( $title ) {
+    $title = str_replace( '__br__', '<br/>', $title );
+    return $title;
+}    
+add_filter( 'widget_title', 'line_br_widget_title' );

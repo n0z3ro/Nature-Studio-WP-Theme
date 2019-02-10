@@ -61,7 +61,7 @@ $home_content = new WP_Query( array( 'post_type' => 'nat_case_studies', 'posts_p
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
-							<h1> CLIENTS: </h1>
+							<h1> CLIENTS </h1>
 						</div>
 					</div>
 					<div id="client-logo-img" class="row justify-content-center">

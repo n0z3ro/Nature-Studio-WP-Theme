@@ -10991,94 +10991,96 @@ a {
     list-style-type: none;
     padding-left: 0px; }
 
-#about-page {
-  /*
-	#about_services_wrap{
-		height:100vh;
-		.row{
-			height:50%;
-			.col-sm-4{
-				display: flex;
-				justify-content: center;
-				align-items: center;
-			}
-			span{
-				display:block;
-				width:90%;
-				margin:0 auto;
-			}
-		}
-		.row-2{
-			.col-sm-4{
-				align-items: flex-start;
-			}
-		}
-		
-		.services_section{
-			width:90%;
-			margin:0 auto;
-			display:inline-block;
-		}
-
-	}
-	*/ }
-  #about-page .content .carousel-item {
-    background: #5CB545;
-    color: #000;
-    height: 100vh; }
-  #about-page .content .carousel-item:nth-child(odd) {
-    background: #000;
-    color: #5CB545; }
-  #about-page h2 {
-    text-align: center; }
-  #about-page #client-logo-img {
-    max-width: 100%;
-    margin: 5% auto; }
-  #about-page #about_services_wrap {
-    margin: 0 10%; }
-    #about-page #about_services_wrap .services_section {
-      width: 92%;
-      margin: 0 auto; }
-    #about-page #about_services_wrap .services_first {
-      margin: 0 auto 0 0; }
-    #about-page #about_services_wrap .services_last {
-      margin: 0 0 0 auto; }
-    #about-page #about_services_wrap .services_header {
-      text-align: left;
-      font-size: 1.1rem;
-      line-height: 1.32rem; }
-    #about-page #about_services_wrap p {
-      font-size: 1.7rem;
-      line-height: 2.04rem; }
-  #about-page .about_header {
-    padding-top: 10%;
-    text-align: center;
-    text-transform: uppercase; }
-  #about-page .about_text {
-    max-width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 3.0rem;
+#about-page .row section {
+  background: #000;
+  color: #5CB545;
+  height: 100vh;
+  padding: 10%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  #about-page .row section .about-body-txt p {
+    font-size: 3rem;
     line-height: 3.6rem; }
-  #about-page .team-images {
-    position: absolute;
-    height: 100vh;
-    padding-right: 0;
-    padding-left: 0; }
-    #about-page .team-images .row {
+  #about-page .row section#about-clients .about_header {
+    margin-bottom: 5%; }
+  #about-page .row section#about-services h2 {
+    text-align: left;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.32rem; }
+  #about-page .row section#about-services .services-txt {
+    width: 92%; }
+  #about-page .row section#about-services p {
+    font-size: 1.7rem;
+    line-height: 2.04rem; }
+  #about-page .row section#about-team {
+    padding: 0; }
+    #about-page .row section#about-team .kc-col-container {
+      height: 100vh; }
+    #about-page .row section#about-team .team-row-1,
+    #about-page .row section#about-team .team-row-2 {
       height: 50%;
-      overflow: hidden; }
-      #about-page .team-images .row .col-sm-4 {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-            -ms-flex-pack: center;
-                justify-content: center;
-        -webkit-box-align: center;
-            -ms-flex-align: center;
-                align-items: center; }
-    #about-page .team-images .col-sm-4 {
+      overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 0; }
+      #about-page .row section#about-team .team-row-1 .kc_col-sm-4,
+      #about-page .row section#about-team .team-row-2 .kc_col-sm-4 {
+        height: 100%; }
+      #about-page .row section#about-team .team-row-1 .kc_single_image,
+      #about-page .row section#about-team .team-row-2 .kc_single_image {
+        height: 100%; }
+        #about-page .row section#about-team .team-row-1 .kc_single_image img,
+        #about-page .row section#about-team .team-row-2 .kc_single_image img {
+          min-width: 100%;
+          min-height: 100%; }
+    #about-page .row section#about-team .team-row-1 .kc_col-sm-4:first-of-type {
+      height: auto; }
+    #about-page .row section#about-team .team-row-2 .kc_col-sm-4:last-of-type {
+      height: auto; }
+  #about-page .row section .like-us-txt p {
+    line-height: 3.5rem;
+    font-size: 3rem;
+    width: 60%;
+    margin: 0 auto; }
+  #about-page .row section .like-us-txt a {
+    line-height: 3.5rem;
+    font-size: 3rem; }
+
+#about-page .row section:nth-child(2n+1) {
+  background: #5CB545;
+  color: #000; }
+
+#about-page h2 {
+  text-align: center; }
+
+#about-page .about_header h1 {
+  text-align: center;
+  text-transform: uppercase; }
+
+#about-page .about_text {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3.0rem;
+  line-height: 3.6rem; }
+
+#about-page .team-images {
+  position: absolute;
+  height: 100vh;
+  padding-right: 0;
+  padding-left: 0; }
+  #about-page .team-images .row {
+    height: 50%;
+    overflow: hidden; }
+    #about-page .team-images .row .col-sm-4 {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -11087,15 +11089,26 @@ a {
               justify-content: center;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center center; }
-  #about-page #about-footer-row {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: none; }
+              align-items: center; }
+  #about-page .team-images .col-sm-4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+
+#about-page #about-footer-row {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: none; }
 
 .page-template-work .work-img {
   text-align: center;
@@ -11380,16 +11393,32 @@ a {
     line-height: 4.2rem; }
   #case-studies .impression_txt p {
     font-size: 1.5rem;
-    line-height: 1.6rem; } }
+    line-height: 1.6rem; }
+  #about-page .row section {
+    height: auto; }
+    #about-page .row section#about-team .kc-col-container {
+      height: auto; }
+    #about-page .row section#about-team .team-row-1 {
+      display: block;
+      height: auto; }
+      #about-page .row section#about-team .team-row-1 .kc_col-sm-4 {
+        width: 50%; }
+        #about-page .row section#about-team .team-row-1 .kc_col-sm-4:first-of-type {
+          width: 100%;
+          padding: 10% 0; }
+    #about-page .row section#about-team .team-row-2 {
+      display: block;
+      height: auto; }
+      #about-page .row section#about-team .team-row-2 .kc_col-sm-4 {
+        width: 50%; }
+        #about-page .row section#about-team .team-row-2 .kc_col-sm-4:last-of-type {
+          width: 100%;
+          padding: 10% 0; } }
 
 @media screen and (max-width: 800px) {
-  #about-page .about_text {
+  #about-page .row section .about-body-txt p {
     font-size: 2rem;
-    line-height: 2.4rem; }
-  #about-page .team-images .row {
-    height: 25%; }
-  #about-page .team-images .col-sm-4 {
-    width: 33.33%; } }
+    line-height: 2.4rem; } }
 
 @media screen and (max-width: 700px) {
   #case-studies .animated_total {
@@ -11421,7 +11450,12 @@ a {
   #case-studies #brief .brief_details {
     margin: 0 auto 32%; }
   .kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4 {
-    width: 33.3333%; } }
+    width: 33.3333%; }
+  #about-page .row section#about-clients .client-logo-row {
+    width: 33%;
+    margin: 0;
+    display: block;
+    clear: none; } }
 
 @media screen and (max-width: 455px) {
   .kingcomposer .asset_three_col div.kc_column_inner.kc_col-sm-4 {
@@ -11459,9 +11493,12 @@ a {
 
 /*Fullpage Scroll (Vertical Carousel) */
 body.page-template-about_full_scroll {
-  overflow: hidden; }
-  body.page-template-about_full_scroll #nature-foot-wrap {
-    height: auto; }
+  /*
+	overflow:hidden;
+	#nature-foot-wrap{
+		height:auto;
+	}
+	*/ }
 
 #vertCarousel .carousel-item-next.carousel-item-left,
 #vertCarousel .carousel-item-prev.carousel-item-right {

@@ -252,6 +252,15 @@ a{
 		padding-left: 0px;
 	}
 }
+//contact
+.wpcf7{
+	label{
+		color:$bright_txt;
+	}
+}
+.wpcf7-response-output{
+	color:$bright_txt;
+}
 #about-page{
 	.row{
 		section{
@@ -304,6 +313,7 @@ a{
 					-ms-flex-align: center;
 					align-items: center;
 					margin: 0;
+					width:100%;
 					.kc_col-sm-4{
 						height:100%;
 					}
@@ -413,6 +423,9 @@ a{
 		padding:$casestudy_padding;
 		&#full_img{
 			padding:0%;
+			.kc_col-sm-12{
+				padding:0%;
+			}
 			.scapt{
 				@include full_scapt;
 				padding: 1.2rem 1.4rem 1rem;
@@ -543,22 +556,6 @@ a{
 	}
 	#strategy{
 	}
-	/*
-	#services{
-		padding-top: 0;
-		h2{
-			margin-top:0;
-		}
-		p{
-			font-size:1.5rem;
-			font-weight:500;
-			line-height:1.9rem;
-			text-align:center;
-			margin-top: .5rem;
-			margin: .5rem 1.25rem 0;
-		}
-	}
-	*/
 	#asset_header{
 		h1{
 			padding-bottom:0;
@@ -571,12 +568,16 @@ a{
 	}
 	#deliverables{
 		padding:0;
+		.kc_col-sm-12{
+			padding:0;
+		}
 		.kc_single_image p{
 			margin:0;
 		}
 		.kc_row_inner{
 			margin-left:0;
 			margin-right:0;
+			width: 100%;
 		}
 		.scapt{
 			@include scapt;
@@ -590,15 +591,6 @@ a{
 			.scapt{
 				@include one_third_scapt;
 			}
-			/*
-			&.long-scapt{
-				.scapt{
-					width: 74%;
-					left: 18%;
-					transform: translate(-6%, -100%);
-				}
-			}
-			*/
 		}
 		.cs-half-img{
 			img{

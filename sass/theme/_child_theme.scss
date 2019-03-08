@@ -468,24 +468,30 @@ a{
 		}
 	}
 	#effects{
-		padding-bottom:2%;
+		padding-bottom:0%;
 	}
 	#effects_alt{
 		padding-bottom:5%;
 	}
 	#effects_graphs{
-		padding-top:2%;
-		padding-bottom:2%;
+		padding-top:0%;
+		padding-bottom:0%;
 	}
 	#effects_graphs_alt{
 		padding-top:0;
 		padding-bottom:0;
 	}
 	#effects_captions{
-		padding-top:2%;
+		padding-top:0%;
+		padding-bottom:10%;
 	}
 	#effects_captions_alt{
 		padding-top:0;
+	}
+	#chart_div,
+	#chart_div2,
+	#chart_div3{
+		height:150px!important;
 	}
 	#effects_videos{
 		padding-top:2%;
@@ -555,6 +561,20 @@ a{
 		background-color:#FEFEFE;
 	}
 	#strategy{
+	}
+	#services{
+		padding-top: 0;
+		h2{
+			margin-top:0;
+		}
+		p{
+			font-size:1.5rem;
+			font-weight:500;
+			line-height:1.9rem;
+			text-align:center;
+			margin-top: .5rem;
+			margin: .5rem 1.25rem 0;
+		}
 	}
 	#asset_header{
 		h1{

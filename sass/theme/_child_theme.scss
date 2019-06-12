@@ -5,7 +5,7 @@ body{
 	margin:0;
 	font-family: 'Gothic A1', sans-serif;
 	font-size: $root_font;
-	font-weight:400;
+	font-weight: 400;
 	color:$dark_txt;
 	letter-spacing:normal;
 }
@@ -17,12 +17,12 @@ h1,h2{
 }
 h1{
 	font-size:$nat_font_lg;
-	line-height:1.8rem;
-	font-weight:900;
+	line-height:3.5rem;
+	font-weight: 900;
 }
 h2{
 	font-size:1.3rem;
-	font-weight:900;
+	font-weight: 900;
 	line-height:1.56rem;
 	color:$green_txt;
 	margin-top:1.3rem;
@@ -30,8 +30,8 @@ h2{
 }
 div,p,li,a, input{
 	font-size:1.7rem;
-	line-height:2.16rem;
-	font-weight:100;
+	line-height:2.5rem;
+	font-weight: 200;
 }
 a{
 	transition: $font_easing;
@@ -72,7 +72,7 @@ a{
 		padding: 14px 20px 10px;
 		margin: 20px 15px 0;
 		border: 2px solid $green_bg;
-		font-weight:700;
+		font-weight: 700;
 		transition: border 0.5s ease;
 		transition: $font_easing;
 		&:hover{
@@ -102,7 +102,7 @@ a{
 			letter-spacing:default;
 			font-size:1.2rem;
 			line-height:2.36rem;
-			font-weight:500;
+			font-weight: 500;
 		}
 	}
 	#foot-addy{
@@ -116,7 +116,7 @@ a{
 			letter-spacing:.1rem;
 			font-size:1.1rem;
 			line-height:3.3rem;
-			font-weight:900;
+			font-weight: 900;
 		}
 	}
 }
@@ -126,7 +126,7 @@ a{
 	color:$green_txt;
 	line-height:2rem;
 	font-size: 1rem;
-	font-weight:300;
+	font-weight: 300;
 	letter-spacing: default;
 }
 @include media-breakpoint-down(sm) {
@@ -185,12 +185,15 @@ a{
 		right: 80%;
 		bottom: 40%;
 		left: 0;
+		text-align:left;
+		text-indent:25%;
 		h5{
-			font-size: 3rem;
-			font-weight:900;
+			font-size: 3.75rem;
+			font-weight: 900;
 		}
 		p{
 			font-size: 1.8rem;
+			font-weight:300;
 		}
 	}
 	#client-logo-img{
@@ -253,13 +256,26 @@ a{
 	}
 }
 //contact
-.wpcf7{
-	label{
+#contact-page{
+	display: table;
+	height: 100vh;
+	width:100%;
+	padding: 10%;
+	.row{
+		display: table-cell;vertical-align: middle;
+	}
+	.wpcf7{
+		label{
+			color:$bright_txt;
+		}
+	}
+	.wpcf7-response-output{
 		color:$bright_txt;
 	}
-}
-.wpcf7-response-output{
-	color:$bright_txt;
+	.wpcf7 input[type="submit"]{
+		font-weight:400;
+		font-size:1.5rem;
+	}
 }
 #about-page{
 	.row{
@@ -270,6 +286,11 @@ a{
 			padding: 10%;
 			-moz-box-sizing: border-box;
 			box-sizing: border-box;
+			display:table;
+			&>div{
+				display: table-cell;
+				vertical-align: middle;
+			}
 			.about-body-txt{
 				p{
 					font-size: 3rem;
@@ -277,16 +298,14 @@ a{
 				}
 			}
 			&#about-clients{
-				.about_header{
-					margin-bottom:5%;
-				}
+
 			}
 			&#about-services{
 				h2{
 					text-align:left;
-					text-align: left;
-					font-size: 1.1rem;
-					line-height: 1.32rem;
+					font-size: 1.5rem;
+					line-height: 2.25rem;
+					padding-bottom: .5rem;
 				}
 				.services-txt{
 					width:92%;
@@ -502,7 +521,7 @@ a{
 	.animated_total{
 		font-size:6.6rem;
 		line-height:7.9rem;
-		font-weight:900;
+		font-weight: 900;
 		text-align:center;
 		display:block;
 		margin-top:0;
@@ -512,7 +531,7 @@ a{
 		color:$green_txt;
 		text-align:center;
 		p{
-			font-weight:300;
+			font-weight: 300;
 			font-size:1.8rem;
 			line-height:2.16rem;
 		}
@@ -542,13 +561,13 @@ a{
 				li{
 					font-size:$nat_font_med;
 					line-height:1.68rem;
-					font-weight:300;
+					font-weight: 300;
 				}
 			}
 			span{
 				font-size:$nat_font_med;
 				line-height:1.68rem;
-				font-weight:300;
+				font-weight: 300;
 			}
 		}
 
@@ -569,7 +588,7 @@ a{
 		}
 		p{
 			font-size:1.5rem;
-			font-weight:500;
+			font-weight: 500;
 			line-height:1.9rem;
 			text-align:center;
 			margin-top: .5rem;
@@ -786,9 +805,15 @@ a{
 			padding-top:8%;
 		}
 		.carousel-caption{
-			right: 60%;
+			right: 70%;
 			bottom: 0;
 			left: 0;
+			h5{
+				font-size:2.5rem;
+			}
+			p{
+				font-size:1.25rem;
+			}
 		}
 	}
 	#about-page{

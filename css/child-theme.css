@@ -10791,7 +10791,7 @@ h1, h2 {
 
 h1 {
   font-size: 1.5rem;
-  line-height: 1.8rem;
+  line-height: 3.5rem;
   font-weight: 900; }
 
 h2 {
@@ -10804,8 +10804,8 @@ h2 {
 
 div, p, li, a, input {
   font-size: 1.7rem;
-  line-height: 2.16rem;
-  font-weight: 100; }
+  line-height: 2.5rem;
+  font-weight: 200; }
 
 a {
   -webkit-transition: color 1s ease-in-out;
@@ -10941,12 +10941,15 @@ a {
   background-color: rgba(0, 0, 0, 0.4);
   right: 80%;
   bottom: 40%;
-  left: 0; }
+  left: 0;
+  text-align: left;
+  text-indent: 25%; }
   #home-page .carousel-caption h5 {
-    font-size: 3rem;
+    font-size: 3.75rem;
     font-weight: 900; }
   #home-page .carousel-caption p {
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+    font-weight: 300; }
 
 #home-page #client-logo-img {
   max-width: 80%;
@@ -10991,11 +10994,21 @@ a {
     list-style-type: none;
     padding-left: 0px; }
 
-.wpcf7 label {
-  color: #FFF; }
-
-.wpcf7-response-output {
-  color: #FFF; }
+#contact-page {
+  display: table;
+  height: 100vh;
+  width: 100%;
+  padding: 10%; }
+  #contact-page .row {
+    display: table-cell;
+    vertical-align: middle; }
+  #contact-page .wpcf7 label {
+    color: #FFF; }
+  #contact-page .wpcf7-response-output {
+    color: #FFF; }
+  #contact-page .wpcf7 input[type="submit"] {
+    font-weight: 400;
+    font-size: 1.5rem; }
 
 #about-page .row section {
   background: #000;
@@ -11003,17 +11016,19 @@ a {
   height: 100vh;
   padding: 10%;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  display: table; }
+  #about-page .row section > div {
+    display: table-cell;
+    vertical-align: middle; }
   #about-page .row section .about-body-txt p {
     font-size: 3rem;
     line-height: 3.6rem; }
-  #about-page .row section#about-clients .about_header {
-    margin-bottom: 5%; }
   #about-page .row section#about-services h2 {
     text-align: left;
-    text-align: left;
-    font-size: 1.1rem;
-    line-height: 1.32rem; }
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+    padding-bottom: .5rem; }
   #about-page .row section#about-services .services-txt {
     width: 92%; }
   #about-page .row section#about-services p {
@@ -11493,9 +11508,13 @@ a {
   #home-page #nature-exp h1 {
     padding-top: 8%; }
   #home-page .carousel-caption {
-    right: 60%;
+    right: 70%;
     bottom: 0;
     left: 0; }
+    #home-page .carousel-caption h5 {
+      font-size: 2.5rem; }
+    #home-page .carousel-caption p {
+      font-size: 1.25rem; }
   #about-page #client-logo-img {
     margin: 0 auto; }
     #about-page #client-logo-img img {

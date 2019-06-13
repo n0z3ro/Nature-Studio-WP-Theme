@@ -82,6 +82,13 @@ a{
 		}
 	}
 }
+#casestudies-foot-carousel{
+	width:100%;
+	.cs-foot-img{
+		float: left;
+		max-width: 50%;
+	}
+}
 #nature-foot{
 	padding-top:2%;
 	background-color:$dark_bg;
@@ -650,6 +657,7 @@ a{
 
 	}
 }
+
 @media screen and (max-width:1255px){
 	#case-studies #deliverables .cs-third-img .scapt{
 		font-size:1rem;

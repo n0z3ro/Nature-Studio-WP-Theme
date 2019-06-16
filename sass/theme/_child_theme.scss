@@ -66,6 +66,9 @@ a{
 	text-align:center;
 	padding-top:10%;
 	padding-bottom:10%;
+	#casestudies-foot{
+		margin-bottom:10%;
+	}
 	a{
 		font-size:18px;
 		display:inline-block;
@@ -87,6 +90,32 @@ a{
 	.cs-foot-img{
 		float: left;
 		max-width: 50%;
+		a{
+			width:65%;
+			margin:0 auto;
+		}
+	}
+	.single-slide{
+		.cs-foot-img{
+			float:none;
+			margin:0 auto;
+		}
+	}
+	a{
+		border:none;
+		margin:0;
+		padding:0;
+		&:hover{
+			border:none;
+		}
+		&.carousel-control{
+			display:flex;
+			justify-content:center;
+			height:100%;
+			width:10%;
+			span{
+			}
+		}
 	}
 }
 #nature-foot{

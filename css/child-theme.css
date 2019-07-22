@@ -10839,15 +10839,20 @@ a {
   color: #5CB545;
   background-color: #000;
   text-align: center;
-  padding-top: 10%;
-  padding-bottom: 10%; }
+  height: 100vh;
+  display: table; }
+  #casestudies-foot-wrap #casestudies-row {
+    margin-left: 0;
+    margin-right: 0;
+    display: table-cell;
+    vertical-align: middle; }
   #casestudies-foot-wrap #casestudies-foot {
-    margin-bottom: 10%; }
+    margin-bottom: 0; }
   #casestudies-foot-wrap a {
     font-size: 18px;
     display: inline-block;
     padding: 14px 20px 10px;
-    margin: 20px 15px 0;
+    margin: 1.5% 15px;
     border: 2px solid #5CB545;
     font-weight: 700;
     -webkit-transition: border 0.5s ease;
@@ -10859,24 +10864,58 @@ a {
       color: #FFF;
       border: 2px solid #FFF; }
 
-#casestudies-foot-carousel {
+#casestudies-foot-carousel-desktop {
   width: 100%; }
-  #casestudies-foot-carousel .cs-foot-img {
+  #casestudies-foot-carousel-desktop .carousel-inner {
+    width: 80%;
+    margin: 0 auto; }
+  #casestudies-foot-carousel-desktop .cs-foot-img {
     float: left;
     max-width: 50%; }
-    #casestudies-foot-carousel .cs-foot-img a {
-      width: 65%;
+    #casestudies-foot-carousel-desktop .cs-foot-img a {
+      width: 100%;
       margin: 0 auto; }
-  #casestudies-foot-carousel .single-slide .cs-foot-img {
+  #casestudies-foot-carousel-desktop .single-slide .cs-foot-img {
     float: none;
     margin: 0 auto; }
-  #casestudies-foot-carousel a {
+  #casestudies-foot-carousel-desktop a {
     border: none;
     margin: 0;
     padding: 0; }
-    #casestudies-foot-carousel a:hover {
+    #casestudies-foot-carousel-desktop a:hover {
       border: none; }
-    #casestudies-foot-carousel a.carousel-control {
+    #casestudies-foot-carousel-desktop a.carousel-control {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      height: 100%;
+      width: 10%; }
+
+#casestudies-foot-carousel-mobile {
+  display: none;
+  width: 100%; }
+  #casestudies-foot-carousel-mobile .carousel-inner {
+    width: 80%;
+    margin: 0 auto; }
+  #casestudies-foot-carousel-mobile .cs-foot-img {
+    float: left;
+    max-width: 100%; }
+    #casestudies-foot-carousel-mobile .cs-foot-img a {
+      width: 75%;
+      margin: 0 auto; }
+  #casestudies-foot-carousel-mobile .single-slide .cs-foot-img {
+    float: none;
+    margin: 0 auto; }
+  #casestudies-foot-carousel-mobile a {
+    border: none;
+    margin: 0;
+    padding: 0; }
+    #casestudies-foot-carousel-mobile a:hover {
+      border: none; }
+    #casestudies-foot-carousel-mobile a.carousel-control {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -11484,9 +11523,17 @@ a {
           padding: 10% 0; } }
 
 @media screen and (max-width: 800px) {
+  #casestudies-foot-carousel-mobile {
+    display: block; }
+  #casestudies-foot-carousel-desktop {
+    display: none; }
   #about-page .row section .about-body-txt p {
     font-size: 2rem;
     line-height: 2.4rem; } }
+
+@media screen and (max-width: 800px) and (orientation: portrait) {
+  #casestudies-foot-wrap #casestudies-foot {
+    margin-bottom: 15%; } }
 
 @media screen and (max-width: 700px) {
   #case-studies .animated_total {
